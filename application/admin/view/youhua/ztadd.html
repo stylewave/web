@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+<script charset="utf-8" src="__STATIC__/kin/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="__STATIC__/kin/lang/zh-CN.js"></script>
+<script>
+    // 关闭过滤模式，保留所有标签
+    //    KindEditor.options.filterMode = false;
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id',{
+            uploadJson :"{:Url::build('admin/Youhua/zt')}",//自己的上传路
+            extraFileUploadParams:{
+                'FLASHPHPSESSID' : "<?php echo session_id();?>"
+            }
+        });
+    });
+</script>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">基本信息</a></li>
+            <!-- <li class=""><a href="#fa-icons-content" data-toggle="tab">内容编辑</a></li> -->
+        </ul>
+        <form action="{:Url::build('admin/Youhua/ztadd');}" enctype="multipart/form-data" method="post" name="qxform" id="qxform">
+        <div class="tab-content">
+          <!-- Font Awesome Icons -->
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+              <!--<input type="hidden" name="__token__" value="{$Request.token}" />-->
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <section id="new">
+              <!--<h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}岗位信息</h4>-->
+              <div class="row fontawesome-icon-list">
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                    名称：<input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                   主词：
+                   <textarea rows="3" style="width: 80%" name="zhi">{$info.zhi}</textarea><span>多个词用“，”分开</span>
+                 
+                   <span class="icon icon-stitle margin-small" ></span>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                    推荐词：
+                    <textarea rows="3" style="width: 80%" name="tui">{$info.tui}</textarea><span>多个词用“，”分开</span>
+                    <!-- <input type="text" style="color: #444444;width: 80%" id="tui" name="tui" value="{$info.tui}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span> -->
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                    达标率：<input type="text" style="color: #444444;width: 80%" id="da" name="da" value="{$info.da}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+                
+                 
+              </div>
+            </section>
+          </div>
+            <!-- <div class="tab-pane" id="fa-icons-content">
+              
+                <div style="padding-left: 20px;" ><br />
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                    <br/>
+                    如果多图上传不显示，请在当前浏览器访问 <a href="http://get.adobe.com/cn/flashplayer/" target="_blank">http://get.adobe.com/cn/flashplayer/</a>，按提示操作更新，安装完成后关闭浏览器重新打开，并且在提示中选择允许
+                </div>
+                <div style="width: 100%;padding: 20px;">
+                    <textarea id="editor_id" name="content" style="width:100%;height:500px;">{$info.content}</textarea>
+                </div>
+            </div> -->
+            <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="qxsubmit();">提交</button><span class="icon icon-ms margin-small" ></span>
+        </div>
+        </form>
+        <!-- /.tab-content -->
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+    <script src="__STATIC__/admin/adminlte/bower_components/select2/js/select2.min.js"></script>
+    <script src="__STATIC__/admin/adminlte/bower_components/select2/js/i18n/zh-CN.js"></script>
+    <script>
+        function qxsubmit() {
+            if($('#url').val() == '') {
+                tips('请填写网址！','.icon-title','url');
+                return false;
+            }
+            // editor.sync();
+            // var html = $('#editor_id').val(); // jQuery
+            // if(html =='') {
+            //     tips('请填写文章内容！','.icon-ms','editor_id');
+            //     return false;
+            // }
+            document.qxform.submit();
+        }
+
+        $(function() {
+            $('.select2').select2({
+                language:'zh-CN'
+            });
+            $("#selectpic").click(function () {
+                $("#upload").click();
+                $("#upload").on("change",function(){
+                    previewImage(this,'preview',200,200);
+                });
+            });
+        });
+    </script>
+    <style>
+        .col-sm-4 input{text-indent:10px;}
+    </style>
+</section>
+
+
+
+

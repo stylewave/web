@@ -1,0 +1,117 @@
+---------------------------------------------------------------
+[ 2019-05-28T08:58:08+08:00 ] 127.0.0.1 GET /solutions_detail.html?id=83
+[ error ] [8]未定义变量: front[E:\data\newsyun\runtime\temp\6e71b52a7c5aaae823a0a24895edc75e.php:401]
+---------------------------------------------------------------
+[ 2019-05-28T08:59:11+08:00 ] 127.0.0.1 GET /solutions_detail.html?id=83
+[ error ] [8]未定义变量: front[E:\data\newsyun\runtime\temp\6e71b52a7c5aaae823a0a24895edc75e.php:401]
+---------------------------------------------------------------
+[ 2019-05-28T09:14:25+08:00 ] 127.0.0.1 GET /solutions_detail.html?id=83
+[ error ] [8]未定义变量: front[E:\data\newsyun\runtime\temp\6e71b52a7c5aaae823a0a24895edc75e.php:401]
+---------------------------------------------------------------
+[ 2019-05-28T09:17:19+08:00 ] 127.0.0.1 GET /solutions_detail.html?id=83
+[ error ] [8]未定义变量: common[E:\data\newsyun\runtime\temp\6e71b52a7c5aaae823a0a24895edc75e.php:419]
+---------------------------------------------------------------
+[ 2019-05-28T09:26:22+08:00 ] 127.0.0.1 GET /news_detail?id677.html
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `id`  desc LIMIT 1' at line 1[E:\data\newsyun\thinkphp\library\think\db\Connection.php:675]
+---------------------------------------------------------------
+[ 2019-05-28T09:53:13+08:00 ] 127.0.0.1 GET /solutions
+[ error ] [8]未定义变量: where[E:\data\newsyun\application\index\controller\Index.php:667]
+---------------------------------------------------------------
+[ 2019-05-28T09:53:22+08:00 ] 127.0.0.1 GET /solutions.html
+[ error ] [8]未定义变量: where[E:\data\newsyun\application\index\controller\Index.php:667]
+---------------------------------------------------------------
+[ 2019-05-28T10:23:31+08:00 ] 127.0.0.1 GET /network.html
+[ error ] [8]未定义变量: nav[E:\data\newsyun\runtime\temp\f4006c1a7f0c1c0951f4091a720d8744.php:98]
+---------------------------------------------------------------
+[ 2019-05-28T10:49:33+08:00 ] 127.0.0.1 GET /seoyouhua.html
+[ error ] [0]模板文件不存在:E:\data\newsyun/application/index/view\index\seoyouhua.html[E:\data\newsyun\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2019-05-28T14:41:10+08:00 ] 127.0.0.1 GET /inde2
+[ error ] [1]Uncaught think\exception\TemplateNotFoundException: template not exists:E:\data\newsyun/application/exception/view/index/404.html in E:\data\newsyun\thinkphp\library\think\view\driver\Think.php:80
+Stack trace:
+#0 E:\data\newsyun\thinkphp\library\think\View.php(175): think\view\driver\Think->fetch('E:\\data\\newsyun...', Array, Array)
+#1 E:\data\newsyun\thinkphp\library\think\response\View.php(38): think\View->fetch('E:\\data\\newsyun...', Array)
+#2 E:\data\newsyun\thinkphp\library\think\Response.php(378): think\response\View->output('E:\\data\\newsyun...')
+#3 E:\data\newsyun\thinkphp\library\think\Response.php(123): think\Response->getContent()
+#4 E:\data\newsyun\thinkphp\library\think\Error.php(50): think\Response->send()
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpException))
+#6 {main}
+  thrown
+---------------------------------------------------------------
+[ 2019-05-28T17:17:54+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [8]Use of undefined constant stitle - assumed 'stitle'
+---------------------------------------------------------------
+[ 2019-05-28T17:18:57+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:07+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:08+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:09+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:09+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:13+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$', expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:23+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:25+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:25+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:27+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:49+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:50+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:19:50+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [0]语法解析错误: syntax error, unexpected '$data' (T_VARIABLE), expecting ',' or ')'
+---------------------------------------------------------------
+[ 2019-05-28T17:22:50+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [2]explode(): Empty delimiter
+---------------------------------------------------------------
+[ 2019-05-28T17:22:54+08:00 ] 127.0.0.1 GET /news/665.html
+[ error ] [2]explode(): Empty delimiter
+---------------------------------------------------------------
+[ 2019-05-28T17:33:40+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:45+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:46+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:46+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:46+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:47+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:50+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:50+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T17:33:51+08:00 ] 127.0.0.1 GET /solutions/83.html
+[ error ] [8]未定义数组索引: tag
+---------------------------------------------------------------
+[ 2019-05-28T19:55:48+08:00 ] 127.0.0.1 GET /news_detail?id=
+[ error ] [8]未定义数组索引: cateid

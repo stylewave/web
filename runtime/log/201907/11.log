@@ -1,0 +1,5 @@
+---------------------------------------------------------------
+[ 2019-07-11T07:00:47+00:00 ] 127.0.0.1 GET /sitemap.html
+[ info ] 127.0.0.1:7002/sitemap.html [运行时间：0.010874s][吞吐率：91.96req/s] [内存消耗：267.00kb] [文件加载：36]
+[ error ] [0]Parse error: syntax error, unexpected 'g' (T_STRING)[E:\data\newsyun\application\common.php:297]
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>seo</title>
+		<meta name="Keywords" content="" />
+		<meta name="description" content="" />
+		<link href="__STATIC__/home/css/global.css" rel="stylesheet" type="text/css">
+		<link href="__STATIC__/home/css/web.css" rel="stylesheet" type="text/css">
+		<script src="__STATIC__/home/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<!-- 头部 -->
+		{include file="public/header" /}
+		<!-- 头部 end -->
+		<!-- banner -->
+		<div class="wwebBanner" style="background: url(__STATIC__/home/images/wweb02.png) no-repeat;"></div>
+		<!-- banner end -->
+
+		<div class="wwebNav">
+			<div class="warp">
+				<div class="wwebNavLeft">
+					<p id="web01P">{$city.title}</p>
+					<div class="box" id="web01Box">
+						<dl class="tit">
+							<dt>全部:</dt>
+							<dd>
+								{foreach $citydata as $v}
+								   <a href="/{$v.cate}/" {if $v.id == $city.id}class="active" {/if}>{$v.title}</a>
+								{/foreach}
+								<!-- <a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a> -->
+							</dd>
+						</dl>
+						<!-- <dl class="tbox">
+							<dt>华北东北:</dt>
+							<dd>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a>
+							</dd>
+							<dt>华北东北:</dt>
+							<dd>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+							</dd>
+							<dt>华北东北:</dt>
+							<dd>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+								<a href="">广东</a>
+								<a href="">东莞</a>
+								<a href="">上海</a>
+								<a href="">北京</a>
+								<a href="">深圳</a>
+							</dd> -->
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wweb02">
+			<div class="warp">
+				<div class="wwebTit">
+					WEBSITE
+					<h3>{$city.title}网站建设</h3>
+				</div>
+				<p>网站是快速提升转化率的重要环节之一，也是企业展示自身实力并提高营销转化率的保障。城市+网站建设不仅注重网站制作的页面视觉效果，更注重网站开发后的运营效果和营销效果。我们的网站建设提供前期企业分析定位、整体网站建设策略方案以及网站制作后期维护等一系列专业服务，助力企业网站抢占营销先机，获取更多用户！</p>
+				<div class="bq">
+					<span>{$city.title}网站建设</span>
+					<span>{$city.title}网站制作</span>
+					<span>{$city.title}网站开发</span>
+				</div>
+			</div>
+		</div>
+		<div class="wweb03">
+			<div class="warp">
+				<ul id="wweb03">
+					<li class="active">
+						<img class="img1" src="__STATIC__/home/images/wweb03.png" alt="">
+						<img class="img2" src="__STATIC__/home/images/wweb03active.png" alt="">
+						<h3>品牌官网设计</h3>
+						<p>结合美感创新与营销，运用响应式设计、H5等最新技术进行设计开发，用更具吸引力的内容多方位展现企业实力，塑造企业形象，让您的网站更有品牌感。</p>
+					</li>
+					<li>
+						<img class="img1" src="__STATIC__/home/images/wweb04.png" alt="">
+						<img class="img2" src="__STATIC__/home/images/wweb04active.png" alt="">
+						<h3>购物商城网站设计</h3>
+						<p>以产品设计和用户体验为导向，注重企业商城产品的特点展示，帮助企业搭建稳定快速的多功能平台，实现线上线下无缝对接，提升用户体验感，增加企业盈利点。</p>
+					</li>
+					<li>
+						<img class="img1" src="__STATIC__/home/images/wweb05.png" alt="">
+						<img class="img2" src="__STATIC__/home/images/wweb05active.png" alt="">
+						<h3>营销型网站建设</h3>
+						<p>通过成熟的建站技术和互联网营销思维，对网站页面进行战略性布局，多维度展现企业服务及产品特色，拓宽企业商业渠道，提升销售额，助力企业实现精准营销。</p>
+					</li>
+					<li>
+						<img class="img1" src="__STATIC__/home/images/wweb06.png" alt="">
+						<img class="img2" src="__STATIC__/home/images/wweb06active.png" alt="">
+						<h3>SEO优化</h3>
+						<p>对网站进行整站优化，提升关键词排名，增加网站曝光机会，吸引更多的目标客户，增加用户精准访问量，提高成交转换率，达到品牌知名度及流量变现的目的。</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="wweb04">
+			<div class="warp">
+				<div class="wwebTit">
+					CASE APPRECIATION
+					<h3>{$city.title}高端网站建设案例欣赏</h3>
+				</div>
+			</div>
+		</div>
+		<div class="brand" style="float: left; width: 100%; height: 820px;">
+			<div class="tabs" style="opacity: 1; margin: 20px auto 0 auto; height: auto;">
+				<ul class="active">
+					{foreach $casedata as $v}
+					<li><a href="/case/{$v.id}.html">
+							<div class="img">
+								<img src="{$v.img}">
+								<div class="box">{$v.stitle}</div>
+							</div>
+							<div class="text">
+								<span class="left">{$v.title}</span>
+								<span class="right">
+										<span><img src="__STATIC__/home/images/icon_7.png"></span>
+										<span class="">{$modelcase[$v.cateid]} </span>
+								</span>
+							</div>
+						</a>
+					</li>
+					{/foreach}
+				
+				</ul>
+			</div>
+		</div>
+		<div class="wweb05">
+			<div class="warp">
+				<ul class="wwebLeft" id="wweb05Tit">
+					<li class="active">
+						<img src="__STATIC__/home/images/wweb08.png" alt="">
+						<p>企业网站建设解决方案</p>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb09.png" alt="">
+						<p>营销型网站建设解决方案</p>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb10.png" alt="">
+						<p>行业门户网站建设解决方案</p>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb11.png" alt="">
+						<p>外贸网站建设解决方案</p>
+					</li>
+				</ul>
+				<div class="wwebRight" id="wweb05Box">
+					<div style="display: block;">
+						<h3>企业网站建设解决方案</h3>
+						<p>企业网站作为公司的网络名片，最重要的是通过页面设计、后台管理系统、对搜索引擎友好等方面更好地展示公司形象和宣传服务产品，提升企业品牌知名度，获取更多精准流量云天下多年建站专业技术和经验，有效帮您打造个性化又具备营销力的好网站。</p>
+					</div>
+					<div>
+						<h3>营销型网站建设解决方案</h3>
+						<p>营销型网站建设解决方案</p>
+					</div>
+					<div>
+						<h3>行业门户网站建设解决方案</h3>
+						<p>行业门户网站建设解决方案</p>
+					</div>
+					<div>
+						<h3>外贸网站建设解决方案</h3>
+						<p>外贸网站建设解决方案</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wweb06">
+			<div class="warp">
+				<div class="wwebTit">
+					QUESTION
+					<h3>网站制作开发常见问题</h3>
+				</div>
+				<ul>
+					<li>
+						<img src="__STATIC__/home/images/wweb12.png" alt="">
+						<p>建立网站需要多长时间？</p>
+						<img class="img2" src="__STATIC__/home/images/wweb13.png" alt="">
+						<span>建站时间主要是根据网站项目来定的，一般来说，模版网站7-10个工作日即可开通，高端专属定制的网站需要一个月或以上，不包括网站备案时间。</span>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb12.png" alt="">
+						<p>企业网站建设好后为什么要做SEO优化？</p>
+						<img class="img2" src="__STATIC__/home/images/wweb13.png" alt="">
+						<span>做网站的最终目的是为了营销，对于企业网站来说，SEO优化能够让企业网站的产品和服务更完善，带来大量精准流量，提升网站整体权重。</span>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb12.png" alt="">
+						<p>为什么有些网站打开很慢？</p>
+						<img class="img2" src="__STATIC__/home/images/wweb13.png" alt="">
+						<span>这种情况影响因素有很多：a.您网站所在服务器太慢；b.您本身上网网速太慢；c.您的网页文件有问题；d.您的电脑有故障。</span>
+					</li>
+					<li>
+						<img src="__STATIC__/home/images/wweb12.png" alt="">
+						<p>企业网站建设需要多少钱？</p>
+						<img class="img2" src="__STATIC__/home/images/wweb13.png" alt="">
+						<span>一般来说，不同的需求、功能及类型的企业网站制作，价格也不一样，企业在网站建设前可以先了解企业最需要什么类型的网站。</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="wweb07">
+			<div class="warp">
+				<div class="wwebTit">
+					COMMENT
+					<h3>网站开发点评</h3>
+				</div>
+				<div id="lun">
+					<ul id="img">
+						<li class="active">
+							<h3>企业官方网站开发解决方案</h3>
+							<p>“城市+网站开发的整套方案非常完美，服务也非常专业到位，帮我们的企业重新市场定位和分析，重新树立了我们的企业形象，更有利企业对外形象展示和服务产品的宣传，而且我们的企业排名也一下提升了！”</p>
+						</li>
+						<li>
+							<h3>企业官方网站开发解决方案2</h3>
+							<p>“城市+网站开发的整套方案非常完美，服务也非常专业到位，帮我们的企业重新市场定位和分析，重新树立了我们的企业形象，更有利企业对外形象展示和服务产品的宣传，而且我们的企业排名也一下提升了！”</p>
+						</li>
+						<li>
+							<h3>企业官方网站开发解决方案3</h3>
+							<p>“城市+网站开发的整套方案非常完美，服务也非常专业到位，帮我们的企业重新市场定位和分析，重新树立了我们的企业形象，更有利企业对外形象展示和服务产品的宣传，而且我们的企业排名也一下提升了！”</p>
+						</li>
+						<li>
+							<h3>企业官方网站开发解决方案4</h3>
+							<p>“城市+网站开发的整套方案非常完美，服务也非常专业到位，帮我们的企业重新市场定位和分析，重新树立了我们的企业形象，更有利企业对外形象展示和服务产品的宣传，而且我们的企业排名也一下提升了！”</p>
+						</li>
+					</ul>
+					<ul id="num">
+						<li>
+							<span class="active_num">
+								<img src="__STATIC__/home/images/wweb14.png" alt="">
+							</span>
+						</li>
+						<li>
+							<span>
+								<img src="__STATIC__/home/images/wweb14.png" alt="">
+							</span>
+						</li>
+						<li>
+							<span>
+								<img src="__STATIC__/home/images/wweb14.png" alt="">
+							</span>
+						</li>
+						<li>
+							<span>
+								<img src="__STATIC__/home/images/wweb14.png" alt="">
+							</span>
+						</li>
+					</ul>
+					<div id="left"><img src="__STATIC__/home/images/wweb16.png" alt=""></div>
+					<div id="right"><img src="__STATIC__/home/images/wweb17.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wweb08">
+			<div class="warp">
+				<div class="wwebTit">
+					COMMENT
+					<h3>网站建设知识</h3>
+				</div>
+				<div class="wweb08Tit" id="wweb08Tit">
+					<p class="active">最新资讯</p>
+					<p>建设知识</p>
+				</div>
+				<div class="box" id="wweb08Box">
+					<div style="display: block;">
+						<ul>
+							{foreach $newsdata as $v}
+							<li>
+								<a href="/news/{$v.id}.html">
+									<h2>{$v.title}</h2>
+									<span>{$v.publishtime}</span>
+									<p>{$v.desc|getSubstr=0,25}</p>
+								</a>
+							</li>
+							{/foreach}
+						
+						</ul>
+					</div>
+					<div>
+					
+							<div style="display: block;">
+									<ul>
+										{foreach $newsdata2 as $v}
+										<li>
+											<a href="/news/{$v.id}.html">
+												<h2>{$v.title}</h2>
+												<span>{$v.publishtime}</span>
+												<p>{$v.desc|getSubstr=0,25}</p>
+											</a>
+										</li>
+										{/foreach}
+									
+									</ul>
+								</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wweb09">
+			<div class="warp">
+				<div class="left">
+					<h3>联系我们</h3>
+					<h4>
+						24小时服务热线：<br>
+						{$config.tel}
+					</h4>
+					<ul>
+						<li>
+							<a href="https://wpa.qq.com/msgrd?v=3&uin={$config.qq}&site=qq&menu=yes" target="_blak">><img src="__STATIC__/home/images/wweb19.png" alt=""></a>
+						</li>
+						<li>
+							<img src="__STATIC__/home/images/wweb20.png" alt="">
+							<div class="box">
+								<img src="{$config.img}" alt="">
+							</div>
+						</li>
+						<li>
+							<img src="__STATIC__/home/images/wweb21.png" alt="">
+							<div class="box">{$config.tel}</div>
+						</li>
+					</ul>
+					<div class="bot">
+						<img src="__STATIC__/home/images/wweb22.png" alt="" class="leftimg">
+						<h5>
+							{$config.address}<br>
+							联系电话：	{$config.phone}
+						</h5>
+					</div>
+				</div>
+				<form id="submit_form" enctype="multipart/form-data">
+				<div class="right">
+					<h3>免费城市网站建设咨询服务</h3>
+					<input type="text" placeholder="公司名称：" name="company" id="company">
+					<input type="text" placeholder="您的姓名：" name="username" id="username" >
+					<input class="input1" type="text" placeholder="联系电话：" name="tel" id="tel">
+					<input class="input2" type="text" placeholder="QQ号码：" name="qq" id="qq">
+					<a href="javascript:;" class="btn" id="submit">提交免费咨询</a>
+				</div>
+			</form>
+			</div>
+		</div>
+		<!-- 底部 -->
+		{include file="public/footer" /}
+
+		<script type="text/javascript">
+			$("#submit").click(function(){
+				if($('#username').val() == ''){
+					alert('请填写您的名字!');
+					return false;
+				}
+				if($('#tel').val() == ''){ 
+					alert('请填写您的手机!');
+					return false;
+				}
+				if(!checkMobile($('#tel').val())){
+					alert('请输入正确的电话号码!');
+					return false;
+				}
+			
+				// 先接收表单中的数据，并拼成这样式格式的字符串： name=tom&age=231
+				var form = $("#submit_form");
+				var formData = form.serialize();
+				console.log(formData);
+				$.ajax({
+					type : "post",
+					url : "/contact.html",
+					data : formData, // 表单中要提交的数据
+					dataType : "json",  // 服务器返回的数据格式
+					success : function(data)
+					{
+						console.log('data',data);
+						if(data.code == 0)
+						{
+							alert(data.msg);
+						}else{
+							alert(data.msg);
+							form.trigger('reset');
+						}
+					}
+				});
+			});
+			// 手机号码格式判断
+			function checkMobile(tel) {
+				var reg = /^(1[3|4|5|7|8][0-9]{9})|(0\d{2,3}-\d{7,8})$/;
+				if (reg.test(tel)) {
+					return true;
+				}else{
+					return false;
+				};
+			}
+		</script>
+		<!-- 底部 end -->
+	</body>
+</html>
+
+<script>
+	$(function() {
+		$('#web01P').click(function() {
+			$('#web01Box').toggle(300);
+		})
+	})
+</script>
+<script>
+	$(function() {
+		$("#wweb03 li").mouseover(function() {
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+	});
+    $(function(){
+        $("#wweb05Tit li").mouseover(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            var index=$(this).index();
+            $("#wweb05Box > div").eq(index).show().siblings().hide();
+        });
+    });
+	$(function(){
+	    $("#wweb08Tit p").mouseover(function(){
+	        $(this).addClass("active").siblings().removeClass("active");
+	        var index=$(this).index();
+	        $("#wweb08Box > div").eq(index).show().siblings().hide();
+	    });
+	});
+</script>
+<script>
+	var lis=document.getElementById('img').getElementsByTagName('li');
+	var num=document.getElementById('num');
+	var left=document.getElementById('left');
+	var right=document.getElementById('right');
+	var num_lis=document.getElementById('num').getElementsByTagName('li');
+	var i=0;
+	function autoRun(){
+		run=setInterval(function(){
+			lis[i].removeAttribute('class');
+			num_lis[i].firstElementChild.removeAttribute('class');
+			i++;
+			if(i==lis.length){
+				i=0;
+			}
+			lis[i].className='active';
+			num_lis[i].firstElementChild.className='active_num';
+			
+		},3000);
+	}
+	autoRun();
+	for(var j=0;j<lis.length;j++){
+		lis[j].onmouseover=function(){
+			clearInterval(run);
+			// left.style.display='block';
+			// right.style.display='block';
+		}
+		lis[j].onmouseout=function(){
+			autoRun();
+			// left.style.display='none';
+			// right.style.display='none';
+		}	
+			
+	}
+	for(var k=0;k<num_lis.length;k++){
+		num_lis[k].firstElementChild.setAttribute('num',k);
+		num_lis[k].onmouseover=function(){
+			clearInterval(run);
+			lis[i].className='';
+			num_lis[i].firstElementChild.className='';
+			i=this.firstElementChild.getAttribute('num');
+			lis[i].className='active';
+			num_lis[i].firstElementChild.className='active_num';
+		}
+		num_lis[k].onmouseout=function(){
+			autoRun();
+		}
+	}
+	num.onmouseover=function(){
+		clearInterval(run);
+	}
+	num.onmouseout=function(){
+		clearInterval(run);
+		autoRun();
+	}
+
+	right.onmouseover=function(){
+		// left.style.display='block';
+		// right.style.display='block';
+		clearInterval(run);
+	}
+	right.onmouseout=function(){
+		// left.style.display='none';
+		// right.style.display='none';
+		autoRun();
+	}
+	right.onclick=function(){
+		lis[i].className='';
+		num_lis[i].firstElementChild.className='';
+		i++;
+		if(i==lis.length){
+			i=0;
+		}
+		lis[i].className='active';
+		num_lis[i].firstElementChild.className='active_num';
+	}
+	left.onmouseover=function(){
+		// left.style.display='block';
+		// right.style.display='block';
+		clearInterval(run);
+	}
+	left.onmouseout=function(){
+		// left.style.display='none';
+		// right.style.display='none';
+		autoRun();
+	}
+	left.onclick=function(){
+		lis[i].className='';
+		num_lis[i].firstElementChild.className='';
+		i--;
+		if(i<0){
+			// i=5;
+			i=lis.length-1;
+		}
+		
+		lis[i].className='active';
+		num_lis[i].firstElementChild.className='active_num';	
+	}
+</script>

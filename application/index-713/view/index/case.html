@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
+		<title>{$seo.title}</title>
+		<meta name="baidu-site-verification" content="C6R2exmaNx" />
+		<meta name="keywords" content="{$seo.keywords}" />
+		<meta name="description" content="{$seo.description}" />
+		<link href="__STATIC__/home/css/case_banner.css" rel="stylesheet" type="text/css">
+		<link href="__STATIC__/home/css/css2018.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="__STATIC__/home/css/global.css">
+		<script src="__STATIC__/home/js/jquery.min.js" type="text/javascript"></script>
+		<!-- <script src="__STATIC__/home/js/nav.js" type="text/javascript"></script> -->
+	</head>
+	<body class="neiye">
+		<script type="text/javascript" src="__STATIC__/home/js/jquery.superslide.2.1.1.js"></script>
+		<script src="__STATIC__/home/js/anim.js">
+			//动画
+		</script>
+		<style>
+			.nav li {
+				position: relative;
+			}
+		</style>
+		<!-- 头部 -->
+	
+			{include file="public/header" /}
+		
+		<!-- 头部 -->
+		<!--banner begin-->
+		<div class="fuSlide ck-slide imgs rel">
+			<ul class="ck-slide-wrapper">
+				<li class="li6 current" style="background-image:url(__STATIC__/home/images/b_case01.jpg);"><img src="__STATIC__/home/images/b_case01.jpg" class="img">
+					<div class="banner_con">
+						<div class="gy2">
+							<div class="banner1_one">
+								<h2 class="f60 anim-1">九银访</h2>
+								<p class="f24 anim-2">高端金银礼品手工定制</p>
+								<em class="leftto"><a href="/case/130.html" title="" lang="http://www.phoenixtree.club/">案例详细</a></em>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="li5" style="background-image:url(images/b_case02.jpg);opacity: 0;"><img src="__STATIC__/home/images/b_case02.jpg" alt="vip服务"
+					 class="img">
+					<div class="banner_con">
+						<div class="gy2">
+							<div class="banner1_one">
+								<h2 class="f60 anim-1">鑫日科</h2>
+								<p class="f24 anim-2">专业在线教育运营服务</p>
+								<em class="leftto"><a href="javascript:;" title="" lang="http://www.mifo.hk/">案例详细</a></em>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="li1" style="background-image:url(images/b_case03.jpg);opacity: 0;"><img src="__STATIC__/home/images/b_case03.jpg" alt="建站服务"
+					 class="img">
+					<div class="banner_con">
+						<div class="gy2">
+							<div class="banner1_one">
+								<h2 class="f60 anim-1">华明博</h2>
+								<p class="f24 anim-2">全国领先的大型现代化全产业链装饰</p>
+								<em class="leftto"><a href="javascript:;" title="" lang="http://www.epsit.cn/">案例详细</a></em>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="li2" style="background-image:url(images/b_case04.jpg);opacity: 0;"><img src="__STATIC__/home/images/b_case04.jpg" alt="会员服务"
+					 class="img">
+					<div class="banner_con">
+						<div class="gy2">
+							<div class="banner1_one">
+								<h2 class="f60 anim-1">新致美义齿</h2>
+								<p class="f24 anim-2">给您健康美丽的牙齿</p>
+								<em class="leftto"><a href="javascript:;" title="" lang="http://www.chunfengzc.com/">案例详细</a></em>
+							</div>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!--<a href="javascript:;" class="ctrl-slide ck-prev"></a>
+	  <a href="javascript:;" class="ctrl-slide ck-next"></a>-->
+			<div class="index-waper-box">
+				<div class="index-back-box digital">
+					<div class="count"><span class="current">01</span> <i>-&nbsp;</i> <span class="total">04</span></div>
+					<div class="sub-arrows bx-controls-direction">
+						<i class="icom prev bx-prev ck-prev"></i>
+						<i class="icom next bx-next ck-next"></i> </div>
+					<div class="sub-mouse">
+						<span><img src="__STATIC__/home/images/sub-mouse.png" /></span>
+					</div>
+					<a href="javascript:void(0)" class="case_a"></a>
+
+				</div>
+			</div>
+			<div class="ck-slidebox">
+				<div class="slideWrap">
+					<ul class="dot-wrap">
+						<li class="current"><em>1</em></li>
+						<li><em>2</em></li>
+						<li><em>3</em></li>
+						<li><em>4</em></li>
+					</ul>
+				</div>
+			</div>
+			<i class="adicon"></i>
+		</div>
+		<script src="__STATIC__/home/js/slide_case.js"></script>
+		<script>
+			$('.ck-slide').ckSlide({
+				autoPlay: true
+			});
+			$(".sub-mouse").find("img").click(function() {
+				var minheight = $(".case_one").offset().top - 75;
+				$('html,body').animate({
+					scrollTop: minheight
+				}, 500)
+			});
+			//滚动到一定位置添加CLASS
+			$(window).scroll(function() {
+				var h = $(document).scrollTop();
+				var j = window.screen.height;
+				var o = $(".fuSlide").offset().top;
+				if (h > o - 100) {
+					$('.digital').addClass('active');
+				} else {
+
+					$('.digital').removeClass('active');
+				}
+			});
+		</script>
+
+		<!--banner end-->
+		<div id="nav" style="display:none; height:75px;"></div>
+		<div class="case_bg" id="public-list">
+			<div class="case_one">
+				<div class="gy2">
+					<h2 class="h2">为您量身订制适合您的网站.</h2>
+					<div class="case_one_r">
+						<a href="/case" title="全部案例" class="all_a">全部案例</a>
+						<div class="case_down">
+							<label>分类</label>
+							<ul>
+                              {foreach $mobilecase as $v}
+								<li><a href="/case.html?pid={$v.id}" title="{$v.title}">{$v.title}</a></li>
+						      {/foreach}		
+
+								<!-- <li><a href="list_1_31.html?in=top#nav" title="购物商城">购物商城</a></li>
+
+								<li><a href="list_1_32.html?in=top#nav" title="行业门户">行业门户</a></li>
+
+								<li><a href="list_1_33.html?in=top#nav" title="移动应用">移动应用</a></li>
+
+								<li><a href="list_1_34.html?in=top#nav" title="外贸网站">外贸网站</a></li>
+
+								<li><a href="list_1_35.html?in=top#nav" title="创意品牌">创意品牌</a></li>
+
+
+								<li><a href="list_1_attr37.html?in=top#nav" title="响应式网站">响应式网站</a></li>
+
+
+								<li><a href="list_1_attr38.html?in=top#nav" title="微信">微信</a></li>
+
+
+								<li><a href="list_1_attr39.html?in=top#nav" title="手机网站">手机网站</a></li> -->
+
+
+							</ul>
+						</div>
+					
+
+					</div>
+				</div>
+			</div>
+			<div class="gy2" style="width:1200px">
+
+				<div class="n_case_list">
+					<ul class="anim anim-1">
+						{foreach $list as $v}
+						<li>
+							<div class="imgs" style="height:234px;"><img src="{$v.img}" alt="" />
+								<div class="txts">
+									<h2>- {$modelcase[$v.cateid]} -</h2>
+									<a href="/case/{$v.id}.html" title="{$v.stitle}"><i class="bgs2"></i>{$v.stitle}</a>
+
+								</div>
+							</div>
+							<div class="allist-cnt">
+								<a href="/case/{$v.id}.html" title="">
+									<h5>{$v.title}</h5>
+								</a>
+								<p>{$v.desc|getSubstr=0,25}</p>
+							</div>
+
+
+							</a>
+						</li>
+						{/foreach}
+
+					
+
+					</ul>
+				</div>
+
+				<div class="fenye gy2">
+					<div class="fenye_nr">
+							<div class="page" style="width:1200px">
+									<div>
+										{$list->render()|raw}
+									</div>
+								</div>
+					
+					</div>
+				</div>
+
+				<div style=" clear:both;"></div>
+			</div>
+		</div>
+		<style>
+				.page {
+					width: 100%;
+					text-align: center;
+					float: left;
+					margin-top: 40px;
+					margin-bottom: 40px;
+				}
+				.page ul li {
+						display: inline-block;
+					}
+				.page span {
+					display: inline-block;
+					width: 65px;
+					background: #ffffff;
+					height: 48px;
+					vertical-align: middle;
+					line-height: 48px;
+					font-size: 14px;
+					border: 1px solid #e5e5e5;
+					margin-left: -5px;
+					color:#686868;
+				}
+				.page a {
+					display: inline-block;
+					width: 65px;
+					background: #ffffff;
+					height: 48px;
+					vertical-align: middle;
+					line-height: 48px;
+					font-size: 14px;
+					border: 1px solid #e5e5e5;
+					margin-left: -5px;
+					color:#686868;
+				}
+				.page .active span {
+					background: #6699ff;
+					color:#fff;
+				}
+		
+		
+				</style>
+		
+		<script language="javascript">
+			$(".case_down label").click(function() {
+				if ($(this).next("ul").css("display") == "none") {
+					$(this).next("ul").slideDown();
+					$(this).parents(".case_down").addClass("isel");
+				} else {
+					$(this).next("ul").slideUp();
+					$(this).parents(".case_down").removeClass("isel");
+				}
+			});
+			$(".case_down").hover(function() {}, function() {
+				$(this).find("ul").hide();
+				$(this).removeClass("isel");
+			})
+		</script>
+		<!--新增尾begin-->
+	
+			{include file="public/footer" /}
+		
+	</body>
+</html>
+

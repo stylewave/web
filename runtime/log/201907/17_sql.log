@@ -1,0 +1,399 @@
+---------------------------------------------------------------
+[ 2019-07-17T08:48:43+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.028011s ] mysql:host=127.0.0.1;port=3306;dbname=yuntianxiav2;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.015914s ]
+[ sql ] [ SQL ] SELECT * FROM `config` LIMIT 1 [ RunTime:0.000648s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'config',
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'extra' => '',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.016158s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `tid` = 1  AND `pid` = 0  AND `ist` = 1 [ RunTime:0.000700s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'tid,pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 16,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `friendlink` [ RunTime:0.014604s ]
+[ sql ] [ SQL ] SELECT * FROM `friendlink` WHERE  `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000642s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'friendlink',
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 24,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 25  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000411s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 26  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000390s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 4,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 40  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000364s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 41  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000390s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 6,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 42  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000425s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 5,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 44  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000398s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 7,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 67  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000405s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 70  AND `ist` = 1 ORDER BY `orders`  asc [ RunTime:0.000537s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 41 [ RunTime:0.000446s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 6,
+  'extra' => '',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `ist` = 1  AND `pid` = 42 ORDER BY `orders`  asc [ RunTime:0.000417s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 5,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `ist` = 1  AND `pid` = 44 [ RunTime:0.000406s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 7,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 70 [ RunTime:0.000337s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => '',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 67 [ RunTime:0.000368s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => '',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.022957s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` = 40 ORDER BY `orders`  asc LIMIT 16 [ RunTime:0.003305s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ref',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 18,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `pid` = 92 [ RunTime:0.000438s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cate',
+  'type' => 'ref',
+  'possible_keys' => 'pid',
+  'key' => 'pid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 1,
+  'extra' => '',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (93) ORDER BY `orders`  asc,`id`  desc [ RunTime:0.009040s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ref',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 58,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` = 94 ORDER BY `orders`  asc,`id`  desc [ RunTime:0.001258s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ref',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 8,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `seo` [ RunTime:0.020384s ]
+[ sql ] [ SQL ] SELECT * FROM `seo` WHERE  `cate` = '标签' LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'seo',
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 21,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (41,72,73,74,75,76,77) ORDER BY `id`  desc LIMIT 6 [ RunTime:0.002246s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'range',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => NULL,
+  'rows' => 38,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` = 94 ORDER BY `orders`  asc,`id`  desc LIMIT 3 [ RunTime:0.000714s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ref',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 8,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (45,47,48,68,95)  AND `seourl` = '/' ORDER BY `orders`  asc,`id`  desc LIMIT 10 [ RunTime:0.040451s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ALL',
+  'possible_keys' => 'cateid',
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 664,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `url` = '/'  AND `cateid` > 92 LIMIT 1 [ RunTime:0.006242s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'range',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => NULL,
+  'rows' => 128,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (41,72,73,74,75,76,77) ORDER BY `id`  desc LIMIT 6 [ RunTime:0.000676s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'range',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => NULL,
+  'rows' => 38,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.015302s ]
+[ sql ] [ SQL ] SELECT * FROM `city` WHERE  `cate` = '' LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'city',
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 2,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (45,47,48,68,95)  AND `seourl` = '/'  AND `cityid` IS NULL ORDER BY `orders`  asc,`id`  desc LIMIT 9 [ RunTime:0.001320s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ALL',
+  'possible_keys' => 'cateid',
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 664,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `cateid` IN (48)  AND `cityid` = 0 ORDER BY `orders`  asc,`id`  desc LIMIT 9 [ RunTime:0.001035s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'article',
+  'type' => 'ref',
+  'possible_keys' => 'cateid',
+  'key' => 'cateid',
+  'key_len' => '4',
+  'ref' => 'const',
+  'rows' => 152,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT * FROM `city` [ RunTime:0.000296s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'city',
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 2,
+  'extra' => '',
+) ]

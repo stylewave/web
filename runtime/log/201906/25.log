@@ -1,0 +1,5 @@
+---------------------------------------------------------------
+[ 2019-06-25T12:59:04+00:00 ] 127.0.0.1 GET /seogjc.html
+[ info ] 127.0.0.1:7002/seogjc.html [运行时间：0.013306s][吞吐率：75.15req/s] [内存消耗：343.42kb] [文件加载：37]
+[ error ] [64]Cannot redeclare getSubstr() (previously declared in E:\data\newsyun\application\common.php:85)[E:\data\newsyun\application\common.php:226]
+[ info ] [ LOG ] INIT File

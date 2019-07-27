@@ -1,0 +1,15 @@
+---------------------------------------------------------------
+[ 2019-05-27T18:14:53+08:00 ] 127.0.0.1 GET /company.html
+[ error ] [8]未定义变量: titledata[E:\data\newsyun\application\index\controller\Index.php:366]
+---------------------------------------------------------------
+[ 2019-05-27T18:14:54+08:00 ] 127.0.0.1 GET /company.html
+[ error ] [8]未定义变量: titledata[E:\data\newsyun\application\index\controller\Index.php:366]
+---------------------------------------------------------------
+[ 2019-05-27T18:15:18+08:00 ] 127.0.0.1 GET /company.html
+[ error ] [8]未定义变量: titledata[E:\data\newsyun\application\index\controller\Index.php:366]
+---------------------------------------------------------------
+[ 2019-05-27T18:18:20+08:00 ] 127.0.0.1 GET /company/266.html
+[ error ] [0]模板文件不存在:E:\data\newsyun/application/index/view\index\company_detail.html[E:\data\newsyun\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2019-05-27T18:25:38+08:00 ] 127.0.0.1 GET /jianzhanzs.html
+[ error ] [0]模板文件不存在:E:\data\newsyun/application/index/view\index\jianzhanzs.html[E:\data\newsyun\thinkphp\library\think\view\driver\Think.php:80]

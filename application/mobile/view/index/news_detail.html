@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{$data.title}-云天下</title>
+		<meta name="baidu-site-verification" content="C6R2exmaNx" />
+		<meta name="keywords" content="{$data.title}" />
+		<meta name="description" content="{$data.desc}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+	</head>
+	<body>
+			<script>
+					function func(){
+						  var vs = $("#pagenum").find("option:selected").val();
+					   
+						  window.location.href = ""+vs;
+						  // alert(vs);
+						  }
+			
+				  </script>
+		{include file="public/header" /}
+		<!-- banner -->
+		<div class="aboutBanner">
+			<img src="__STATIC__/mobile/images/news01.png" alt="">
+		</div>
+		<!-- banner end -->
+		<!-- 内容 -->
+		<div class="news">
+			<div class="newsFen">
+					<select id="pagenum" onchange="func()">	
+							<option value="/news.html">全部</option>
+							<option value="/seo.html">seo优化</option>
+							<option value="/jianzhanzs.html">建站知识</option>
+							<option value="/company.html">公司新闻</option>
+							<option value="/promotion.html">网络推广</option>
+							<option value="/marketing.html">网络营销</option>
+						</select>
+				<div class="news_one_r">
+					<form action="" method="get" name="form3" id="form3">
+						<input type="text" class="cinputs" name="keys" placeholder="输入搜索关键字">
+						<input type="submit" class="cbnts" value="">
+					</form>
+				</div>
+			</div>
+			<div class="news_show_l">
+				<div class="new_show_l_top">
+					<h1>{$data.title}</h1>
+					<p>发表日期：{$data.publishtime} 浏览次数：{$data.click}</p>
+				</div>
+				<div class="new_show_l_text">
+						{$data.ms|raw}
+
+					<script type="text/javascript">
+						document.oncopy = function() {
+							return false;
+						};
+					</script>
+				</div>
+				<div class="prenext">
+				
+
+					{if condition="$front['title'] eq '已经是最后一篇了'"}
+					<a href="javascript:void(0);" class='l'><label class='a'>&lt;</label> 没有了</a>
+				{else /}
+					<a href="/news/{$front.id}.html" class='l'><label class='a'>&lt;</label>上一篇</a>
+				{/if}
+				{if condition="$after['title'] eq '已经是最后一篇了'"}
+					<a href="javascript:void(0);" class="r nodata">没有了<label class='b'>&gt;</label></a>
+				{else /}
+					<a href="/news/{$after.id}.html" class='r nodata'>下一篇<label class='b'>&gt;</label></a>
+				{/if}
+				</div>
+			</div>
+		</div>
+		<!-- 内容 end -->
+		<!-- 资讯 end -->
+		{include file="public/footer" /}
+	</body>
+</html>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>

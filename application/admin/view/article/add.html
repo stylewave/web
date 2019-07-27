@@ -1,0 +1,357 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+<script charset="utf-8" src="__STATIC__/kin/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="__STATIC__/kin/lang/zh-CN.js"></script>
+
+<!-- date-range-picker -->
+<script src="__STATIC__/admin/adminlte/bower_components/moment/min/moment.min.js"></script>
+<script src="__STATIC__/admin/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="__STATIC__/admin/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="__STATIC__/admin/adminlte/bower_components/moment/locale/zh-cn.js"></script>
+<!-- daterange picker -->
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
+<script>
+    // 关闭过滤模式，保留所有标签
+//    KindEditor.options.filterMode = false;
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id',{
+            uploadJson :"{:Url::build('admin/Article/add')}",//自己的上传路
+            extraFileUploadParams:{
+                'FLASHPHPSESSID' : "<?php echo session_id();?>"
+            }
+        });
+    });
+</script>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">文章基本信息</a></li>
+          <li class=""><a href="#fa-icons-content" data-toggle="tab">文章内容编辑</a></li>
+        </ul>
+        <form action="{:Url::build('admin/Article/add');}" enctype="multipart/form-data" method="post" name="qxform" id="qxform">
+        <div class="tab-content">
+          <!-- Font Awesome Icons -->
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+              <input type="hidden" name="__token__" value="{$Request.token}" />
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <section id="new">
+              <!--<h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}文章</h4>-->
+                <div><br />
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+              <div class="row fontawesome-icon-list">
+                  <div class="col-md-3 col-sm-4" >
+                      <div class="form-group">
+                          选择分类：<select class="form-control select2" style="width: 50%;" name="cateid" id="cateid" onchange="getValue()">
+                          <option selected="selected" value="0">请选择分类</option>
+                          {foreach $catelist as $rbac}
+                          <option value="{$rbac.id}" {if $rbac['id'] == $info['cateid']}selected{/if}>{php}if($rbac['dj'] > 0)  {echo str_repeat(" ---- ",$rbac['dj'])." ";}{/php}{$rbac.title}</option>
+                          {/foreach}
+                      </select>
+                          <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                      </div>
+                  </div>
+                  {if $info['cateid'] == 80}
+                  <div class="col-md-3 col-sm-4"  >
+                    <div class="form-group">
+                        部门选择：<select class="form-control select2" style="width: 50%;" name="company" id="company" >
+                      
+                    
+                        <option {if $info['company'] == 1}selected{/if} value="1">销售部</option>
+                        <option {if $info['company'] == 2}selected{/if} value="2">技术部</option>
+                        <option {if $info['company'] == 3}selected{/if} value="3">设计部</option>
+                        <option {if $info['company'] == 4}selected{/if} value="4">客服部</option>
+                     
+                    </select>
+                        <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                    </div>
+                </div>
+                  {else/}
+                  <div class="col-md-3 col-sm-4" id="company_a" style="display: none">
+                        <div class="form-group">
+                            部门选择：<select class="form-control select2" style="width: 50%;" name="company" id="company" >
+                            <!-- <option selected="selected" value="0">请选择分类</option> -->
+                        
+                            <option value="1">销售部</option>
+                            <option value="2">技术部</option>
+                            <option value="3">设计部</option>
+                            <option value="4">客服部</option>
+                         
+                        </select>
+                            <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                        </div>
+                    </div>
+
+                  
+                   {/if} 
+                
+                <div class="col-md-3 col-sm-4" >
+                  标题标题：<input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+
+                {if $info['cateid'] == 93}
+                <div class="col-md-3 col-sm-4" >
+                    显示标题：<input type="text" style="color: #444444;width: 80%" id="seotitle" name="seotitle" value="{$info.seotitle}"> <span class="icon icon-stitle margin-small" ></span>
+                </div>
+                {else /}
+
+                <div class="col-md-3 col-sm-4" id="seotitle_a" style="display: none">
+                    显示标题：<input type="text" style="color: #444444;width: 80%" id="seotitle" name="seotitle" value="{$info.seotitle}"> <span class="icon icon-stitle margin-small" ></span>
+                </div>
+
+                {/if}
+
+                <div class="col-md-3 col-sm-4" >
+                    文章关键词：<input type="text" style="color: #444444;width: 80%" id="stitle" name="stitle" value="{$info.stitle}"> <span class="icon icon-stitle margin-small" ></span>
+                </div>
+                {if $info['cateid'] == 93}
+                <div class="col-md-3 col-sm-4" >
+                    关键词地址：<input type="text" style="color: #444444;width: 80%" id="url" name="url" value="{$info.url}"> <span class="icon icon-stitle margin-small" ></span>
+                </div>
+                {else /}
+            
+
+                <div class="col-md-3 col-sm-4" id="tag_a" style="display: none">
+                    关键词地址：<input type="text" style="color: #444444;width: 80%" id="url" name="url" value="{$info.url}"> <span class="icon icon-stitle margin-small" ></span>
+                </div>
+
+
+                {/if}
+
+                
+                {if $info['cateid'] == 93}
+                <div class="col-md-3 col-sm-4" >
+                    地区：<input type="text" style="color: #444444;width: 60%" id="area" name="area" value="{$info.area}"> <span class="icon icon-stitle margin-small" >比如：上海</span>
+                </div>
+                {else /}
+
+                <div class="col-md-3 col-sm-4" id="area_a" style="display: none">
+                    地区：<input type="text" style="color: #444444;width: 60%" id="area" name="area" value="{$info.area}"> <span class="icon icon-stitle margin-small" >比如：上海</span>
+                </div>
+
+                {/if}
+
+                {if $info['cateid'] != 93}
+                <div class="col-md-3 col-sm-4" id="tag">
+                    <div class="form-group">
+                        关键词地址选择：<select class="form-control select2" style="width: 50%;" name="seourl">
+                            <option value="">请选择地址</option>
+                     {foreach $tagdata as $v}
+                        <option value="{$v.url}" {if $info['seourl'] == $v.url}selected{/if}>{$v.title}</option>
+                     {/foreach}  
+                    </select>
+                    <span>非必选</span>
+                    </div>
+                </div>
+                {/if}
+
+                {if $info['cateid'] != 93}
+                <div class="col-md-3 col-sm-4" id="tag">
+                    <div class="form-group">
+                        城市选择：<select class="form-control select2" style="width: 50%;" name="cityid">
+                            <option value="">请选择城市</option>
+                     {foreach $citydata as $v}
+                        <option value="{$v.id}" {if $info['cityid'] == $v.id}selected{/if}>{$v.title}</option>
+                     {/foreach}  
+                    </select>
+                    <span>非必选</span>
+                    </div>
+                </div>
+                {/if}
+
+                    <!--团队介绍-->
+                  {if $info['cateid'] == 58}
+                  <div class="col-md-3 col-sm-4">
+                      部门：<input type="text" style="color: #444444;width: 80%" id="department" name="department" value="{$info.department}"> <span style="color: red">*</span><span class="icon icon-department margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                      部门（英文）：<input type="text" style="color: #444444;width: 80%" id="departments" name="departments" value="{$info.departments}"> <span class="icon icon-departments margin-small" ></span>
+                  </div>
+                  {else /}
+                  <div class="col-md-3 col-sm-4" id="department_a" style="display: none">
+                      部门：<input type="text" style="color: #444444;width: 80%" id="department" name="department" value="{$info.department}"> <span style="color: red">*</span><span class="icon icon-department margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" id="department_b" style="display: none">
+                      部门（英文）：<input type="text" style="color: #444444;width: 80%" id="departments" name="departments" value="{$info.departments}"> <span class="icon icon-departments margin-small" ></span>
+                  </div>
+                  {/if}
+                  <!--团队介绍-->
+
+                  <!--案例中心-->
+               
+                  <!--案例中心-->
+                <div class="col-md-3 col-sm-4" >
+                    封面图片：<span id="selectpic" style="cursor:pointer;color:#1E88C7;background: #D0EEFF;border-radius: 5px;padding:5px 22px;">选择图片</span>
+                    <div style="margin-left: 63px;" id="preview"></div>
+                    <input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+                </div>
+                  {if !empty($info['img'])}
+                  <div class="col-md-3 col-sm-4" >
+                      原有图片：<a href="{$info.img}" target="_blank"><img src="{$info.img}" style="width: 200px;height:132px"></a>
+                  </div>
+                  {/if}
+                  <div class="col-md-3 col-sm-4">
+                      文章描述：<textarea rows="3" style="width: 100%" name="desc">{$info.desc}</textarea>
+                  </div>
+                <div class="col-md-3 col-sm-4" >
+                  文章排序：<input type="text" style="color: #444444;width: 20%" id="orders" name="orders" value="{$info.orders}"> <span style="color: red">>=0，越小越前，前后台都有效，默认0</span><span class="icon icon-order margin-small" ></span>
+                </div>
+                  <div class="col-md-3 col-sm-4" >
+                      浏览次数：<input type="text" style="color: #444444;width: 20%" id="click" name="click" value="{$info.click}"><span class="icon icon-click margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                      发布时间：
+                      <input name="publishtime" id="daterange-btn" value="{$info.publishtime|default=date('Y-m-d')}" type="text" style="width:160px;text-indent:40px"/>
+                      <span style="border-radius:0;border-color:#d2d6de;background-color:#fff;padding:7px 10px;position:relative;border-right:1px solid #cfcfcf; bottom:0px;right:162px;">
+						<i class="fa fa-calendar" style="padding-left:0"></i>
+					  </span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 80%">
+                      <label>是否推荐：</label>
+                      <div class="onoff">
+                          <label for="switch1" class="cb-enable {if $info['ist'] == 1}selected{/if}">推荐</label>
+                          <label for="switch0" class="cb-disable {if $info['ist'] == 0}selected{/if}">不推荐</label>
+                          <input type="radio" id="switch1" name="ist" value="1" checked="{if $info['ist'] == 1}checked{/if}">
+                          <input type="radio" id="switch0" name="ist" value="0" {if $info['ist'] == 0}checked="checked"{/if}>
+                      </div>
+                  </label>
+                  </div>
+              </div>
+            </section>
+          </div>
+          <!-- /#fa-icons -->
+          <div class="tab-pane" id="fa-icons-content">
+              <!--<h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}文章</h4>-->
+              <div  style="padding-left: 20px;"><br />
+                  上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                  <br/>
+                  如果多图上传不显示，请在当前浏览器访问 <a href="http://get.adobe.com/cn/flashplayer/" target="_blank">http://get.adobe.com/cn/flashplayer/</a>，按提示操作更新，安装完成后关闭浏览器重新打开，并且在提示中选择允许
+              </div>
+            <div style="width: 100%; padding: 20px;">
+                  <textarea id="editor_id" name="ms" style="width:100%;height:600px;">{$info.ms}</textarea>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="qxsubmit();">提交</button><span class="icon icon-ms margin-small" ></span>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <style>
+        .col-sm-4{width: 60%;line-height: 30px;margin-top: 15px;}
+        .col-sm-4 input,.col-sm-4 textarea{text-indent: 10px}
+        .department_a,.department_b,.en_title_a,.model_a,.producer_a,.producer_b,.deesigner_a,.deesigner_b,.en_desc{display: block !important;}
+    </style>
+  <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+  <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/select2.min.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/i18n/zh-CN.js"></script>
+<script>
+    function qxsubmit() {
+        if($('#title').val() == '') {
+            tips('请填写标题！','.icon-title','title');
+            return false;
+        }
+//        var file=$("#upload");
+//        if($.trim(file.val())==''){
+//            tips('请上传封面图！','.icon-cateid','cateid');
+//            return false;
+//        }
+
+        if($('#cateid').val() <1) {
+            tips('请选择分类！','.icon-cateid','cateid');
+            return false;
+        }
+
+        editor.sync();
+        var html = $('#editor_id').val(); // jQuery
+        // if(html =='') {
+        //     tips('请填写文章内容！','.icon-ms','editor_id');
+        //     return false;
+        // }
+        document.qxform.submit();
+    }
+
+    $(function() {
+        $('.select2').select2({
+            language:'zh-CN'
+        });
+        $("#selectpic").click(function () {
+            $("#upload").click();
+            $("#upload").on("change",function(){
+                previewImage(this,'preview',200,200);
+            });
+        });
+    });
+</script>
+<!--时间、日期js-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        moment.locale('zh-cn');
+        $('#daterange-btn').daterangepicker({
+            format:"YYYY-MM-DD",
+            singleDatePicker: true,
+            showDropdowns: true,
+            minDate:'2000-01-01',
+            maxDate:'2050-01-01',
+            locale : {
+                applyLabel : '确定',
+                cancelLabel : '取消',
+                fromLabel : '起始时间',
+                toLabel : '结束时间',
+                customRangeLabel : '自定义',
+                daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月','七月', '八月', '九月', '十月', '十一月', '十二月' ],
+                firstDay : 1
+            }
+        });
+    });
+    function getValue(){
+        if($("#cateid option:selected").text() == ' ----  ----  团队介绍'){
+            $('#department_a').addClass('department_a');
+            $('#department_b').addClass('department_b');
+        }
+        if($("#cateid option:selected").text() == '案例中心'){
+            $('#en_title_a').addClass('en_title_a');
+            $('#model_a').addClass('model_a');
+            $('#producer_a').addClass('producer_a');
+            $('#producer_b').addClass('producer_b');
+            $('#deesigner_a').addClass('deesigner_a');
+            $('#en_desc').addClass('en_desc');
+            $('#deesigner_b').addClass('deesigner_b');
+        }
+
+     var Cts = $("#cateid option:selected").text();
+    if(Cts.indexOf("公司团队") > 0 ){
+        $('#company_a').css('display','block');
+    }
+
+    if(Cts.indexOf("seo标签") > 0 ){
+        $('#seotitle_a').css('display','block');
+        $('#tag_a').css('display','block');
+        $('#tag').css('display','none');
+        $('#area_a').css('display','block');
+        
+    }else{
+        $('#seotitle_a').css('display','none');
+        $('#tag_a').css('display','none');
+        // $("div").remove("#tag_a div");
+        $('#tag').css('display','block');
+        $('#area_a').css('display','none');
+    }
+
+
+    }
+
+    
+</script>
+</section>
+
+
+
+

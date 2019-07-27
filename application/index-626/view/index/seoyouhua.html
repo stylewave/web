@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$seo.title}</title>
+  
+    <meta name="keywords" content="{$seo.keywords}" />
+    <meta name="description" content="{$seo.description}" />
+	<link href="__STATIC__/home/css/global.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/home/seo/css/allseo.css" rel="stylesheet" type="text/css">
+	<script src="__STATIC__/home/seo/js/jquery.min.js"></script>
+</head>
+<body>
+	<!-- 头部 -->
+    {include file="public/header" /}
+	<!-- 头部 end -->
+	<!-- banner -->
+		<div class="allseoBanner" style="background: url(__STATIC__/home/seo/images/allseo01.jpg) no-repeat;"></div>
+	<!-- banner end -->
+		<div class="allseo01">
+			<div class="warp">
+				<div class="allseoTit">SEO整站优化<span>服务介绍</span></div>
+				<div class="allseoDov">
+					整站优化是网站SEO优化的应用，是更高层次的网站营销策略，是以提升网站搜索引擎友好度为核心<br>
+					通过提升网站的质量，获得更好的排序权重和搜索流量，并为企业站的营销盈利服务。一般有两种形<br>
+					式的整站优化服务，一种是以关键词排名为考核依据，一种是以流量为考核依据。
+				</div>
+				<div class="allseoTit allseoTit2">整站优化<span>四大阶段</span></div>
+				<ul class="allseo02" id="allseo02">
+					<li class="active">
+						<img src="__STATIC__/home/seo/images/allseo03.png" alt="">
+						<dl>
+							<dt>第一阶段：网站诊断</dt>
+							<dd>
+								网站诊断，站点全面分析<br>
+								分析竞争对手的网站情况<br>
+								网站优化方针确定与部署
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="__STATIC__/home/seo/images/allseo04.png" alt="">
+						<dl>
+							<dt>第二阶段：优化前期</dt>
+							<dd>
+								整站布局，关键词分析挖掘<br>
+								内容强化，建立网站内容库<br>
+								内部优化，URL与代码优化
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="__STATIC__/home/seo/images/allseo05.png" alt="">
+						<dl>
+							<dt>第三阶段：优化中期</dt>
+							<dd>
+								丰富网站内容生态，增加收录<br>
+								页面架构优化，强大外链提权<br>
+								相关词、长尾词无限拓展
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="__STATIC__/home/seo/images/allseo06.png" alt="">
+						<dl>
+							<dt>第四阶段：优化后期</dt>
+							<dd>
+								关键词排名上升迅猛<br>
+								网站权重快速提升<br>
+								出现大量长尾精准
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<div class="allseoTit">SEO整站优化<span>包年套餐</span></div>
+				<div class="allseo03">
+					<img src="__STATIC__/home/seo/images/allseo08.png" alt="">
+					<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2019111136&amp;site=qq&amp;menu=yes" target="_blank" class="btn"><img src="__STATIC__/home/seo/images/allseo07.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+		<div class="allseo04">
+			<div class="warp">
+				<ul class="left">
+					<li>
+						<dl>
+							<dt>精品套餐(热销)解读：</dt>
+							<dd>客户自选15个主关键词，云天下优化师推荐15个关键词，保证60%的上词率承诺排名效果以百度为准360搜索、搜狗搜索排名效果免费赠送。</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>高端套餐(对网站有要求)解读：</dt>
+							<dd>选择高端套餐对网站有要求，网站百度收录量超过100条，网站有基础权重，建站时间超过3个月等。如果上面方案均不能满足您的需求，我们还可以根据实际情况，为您量身打造合理的个性化优化方案。这个收费需求根据实际情况而定。</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>精品套餐(热销)解读：</dt>
+							<dd>于关键词的选取，我们会根据您的产品或行业具体情况而制定相对应的关键词库。</dd>
+						</dl>
+					</li>
+				</ul>
+				<ul class="right">
+					<li class="one">
+						<p>{$config.address}</p>
+					</li>
+					<li class="two">
+						<span>{$config.tel}</span>
+					</li>
+					<li class="three">
+						<span>{$config.email}</span>
+					</li>
+					<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2019111136&amp;site=qq&amp;menu=yes" target="_blank" class="more"><img src="__STATIC__/home/seo/images/allseo13.png" alt=""></a>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="seoyh08">
+				<div class="warp">
+					<div class="allseoTit">整站优化<span>成功案例</span>
+						<a href="javascript:;" style="float: right;"><img src="images/seoyh36.png" alt=""></a>
+					</div>
+					<div id="lun">
+						<ul id="img">
+						
+							<li class="active">
+								<div class="seoUl01">
+								{foreach $ztdata as $k=>$v}
+								 {if $k<6}
+									<dl>
+										<h2>{$v.title}</h2>
+										<div class="p">主词：</div>
+										<dt>
+											{foreach $v.zhis as $vv}
+											<span>{$vv}</span>
+											{/foreach}
+										
+										</dt>
+										<div class="p">推荐词：</div>
+										<dt style="max-height: 70px;">
+											{foreach $v.tuis as $vv}
+											<span>{$vv}</span>
+											{/foreach}
+											
+										</dt>
+										<div class="more">
+											<p>达标率：</p>
+											<span>{$v.da}</span>
+											<a href="javascript:;">查看详情</a>
+										</div>
+									</dl>
+									{/if}
+									{/foreach}
+									
+								
+								</div>
+							</li>
+							{if $dian>6}
+							<li>
+									<div class="seoUl01">
+									{foreach $ztdata as $k=>$v}
+									{if $k<12 && $k>5}
+									<dl>
+										<h2>{$v.title}</h2>
+										<div class="p">主词：</div>
+										<dt>
+											{foreach $v.zhis as $vv}
+											<span>{$vv}</span>
+											{/foreach}
+										
+										</dt>
+										<div class="p">推荐词：</div>
+										<dt style="max-height: 70px;">
+											{foreach $v.tuis as $vv}
+											<span>{$vv}</span>
+											{/foreach}
+											
+										</dt>
+										<div class="more">
+											<p>达标率：</p>
+											<span>{$v.da}</span>
+											<a href="javascript:;">查看详情</a>
+										</div>
+									</dl>
+									{/if}
+									{/foreach}
+								</div>
+
+							</li>
+							{/if}
+							{if $dian>12}
+							<li>
+									<div class="seoUl01">
+											{foreach $ztdata as $k=>$v}
+										 {if $k<18 && $k>11}
+											<dl>
+												<h2>{$v.title}</h2>
+												<div class="p">主词：</div>
+												<dt>
+													{foreach $v.zhis as $vv}
+													<span>{$vv}</span>
+													{/foreach}
+												
+												</dt>
+												<div class="p">推荐词：</div>
+												<dt style="max-height: 70px;">
+													{foreach $v.tuis as $vv}
+													<span>{$vv}</span>
+													{/foreach}
+													
+												</dt>
+												<div class="more">
+													<p>达标率：</p>
+													<span>{$v.da}</span>
+													<a href="javascript:;">查看详情</a>
+												</div>
+											</dl>
+											{/if}
+											{/foreach}
+										</div>
+		
+							</li>
+							{/if}
+							{if $dian>18}
+							<li>
+									<div class="seoUl01">
+											{foreach $ztdata as $k=>$v}
+										 {if $k>18}
+											<dl>
+												<h2>{$v.title}</h2>
+												<div class="p">主词：</div>
+												<dt>
+													{foreach $v.zhis as $vv}
+													<span>{$vv}</span>
+													{/foreach}
+												
+												</dt>
+												<div class="p">推荐词：</div>
+												<dt style="max-height: 70px;">
+													{foreach $v.tuis as $vv}
+													<span>{$vv}</span>
+													{/foreach}
+													
+												</dt>
+												<div class="more">
+													<p>达标率：</p>
+													<span>{$v.da}</span>
+													<a href="javascript:;">查看详情</a>
+												</div>
+											</dl>
+											{/if}
+											{/foreach}
+										</div>
+		
+							</li>
+							{/if}
+						</ul>
+	
+						<ul id="num">
+						
+							<li><span  class="active_num" ></span></li>
+							{if $dian>6}
+							<li><span></span></li>
+							{/if}
+							{if $dian>12}
+							<li><span></span></li>
+							{/if}
+							{if $dian>18}
+							<li><span></span></li>
+							{/if}
+							<!-- <li><span></span></li>
+							<li><span></span></li> -->
+						</ul>
+	
+						<div id="left"></div>
+						<div id="right"></div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+		<div class="allseo05">
+			<div class="warp">
+				<div class="allseoTit" style="margin-top: 70px;">整站优化<span>合作流程</span></div>
+				<img src="__STATIC__/home/seo/images/allseo14.png" alt="">
+			</div>
+		</div>
+		<div class="allseo06">
+			<div class="warp">
+				<div class="allseoTit">云天下十年互联网核心团队</div>
+				<div class="allseoP">已成功帮助5000家企业完美解决建站优化难题。</div>
+			</div>
+		</div>
+		<div class="allseo07">
+			<div class="warp">
+				<div class="allseoTit">新闻资讯</div>
+				<ul>
+                    {foreach $data as $v}
+					<li><a href="/news/{$v.id}.html" title="{$v.title}">
+						<h2>{$v.title|getSubstr=0,16}</h2>
+						<P>{$v.desc|getSubstr=0,60}</P>
+						<dl>
+							<dt> {$v.publishtime|getSubstrTime=7,3,2}</dt>
+                            <dd>{$v.publishtime|getSubstrTime=0,7,1}</dd>
+						</dl></a>
+                    </li>
+                    {/foreach}
+				
+				</ul>
+			</div>
+		</div>
+	<!-- 底部 -->
+	{include file="public/footer" /}
+	<!-- 底部 end -->
+</body>
+</html>
+
+
+
+
+<script>
+		$(function(){
+			$('#allseo02 li').mouseover(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+			})
+		})
+	</script>
+	<script>
+		var lis=document.getElementById('img').getElementsByTagName('li');
+		var num=document.getElementById('num');
+		var left=document.getElementById('left');
+		var right=document.getElementById('right');
+		var num_lis=document.getElementById('num').getElementsByTagName('li');
+		var i=0;
+		function autoRun(){
+			run=setInterval(function(){
+				lis[i].removeAttribute('class');
+				num_lis[i].firstElementChild.removeAttribute('class');
+				i++;
+				if(i==lis.length){
+					i=0;
+				}
+				lis[i].className='active';
+				num_lis[i].firstElementChild.className='active_num';
+			},2500);
+		}
+		autoRun();
+		for(var j=0;j<lis.length;j++){
+			lis[j].onmouseover=function(){
+				clearInterval(run);
+				left.style.display='block';
+				right.style.display='block';
+			}
+			lis[j].onmouseout=function(){
+				autoRun();
+				left.style.display='none';
+				right.style.display='none';
+			}	
+				
+		}
+		for(var k=0;k<num_lis.length;k++){
+			num_lis[k].firstElementChild.setAttribute('num',k);
+			num_lis[k].onmouseover=function(){
+				clearInterval(run);
+				lis[i].className='';
+				num_lis[i].firstElementChild.className='';
+				i=this.firstElementChild.getAttribute('num');
+				lis[i].className='active';
+				num_lis[i].firstElementChild.className='active_num';
+			}
+			num_lis[k].onmouseout=function(){
+				autoRun();
+			}
+		}
+		lis.onmouseover=function(){
+			clearInterval(run);
+			alert(1);
+		}
+		lis.onmouseout=function(){
+			clearInterval(run);
+			autoRun();
+		}
+		right.onmouseover=function(){
+			left.style.display='block';
+			right.style.display='block';
+			clearInterval(run);
+		}
+		right.onmouseout=function(){
+			left.style.display='none';
+			right.style.display='none';
+			autoRun();
+		}
+		right.onclick=function(){
+			lis[i].className='';
+			num_lis[i].firstElementChild.className='';
+			i++;
+			if(i==lis.length){
+				i=0;
+			}
+			lis[i].className='active';
+			num_lis[i].firstElementChild.className='active_num';	
+		}
+		left.onmouseover=function(){
+			left.style.display='block';
+			right.style.display='block';
+			clearInterval(run);
+		}
+		left.onmouseout=function(){
+			left.style.display='none';
+			right.style.display='none';
+			autoRun();
+		}
+		left.onclick=function(){
+			lis[i].className='';
+			num_lis[i].firstElementChild.className='';
+			i--;
+			if(i<0){
+				// i=5;
+				i=lis.length-1;
+			}
+			lis[i].className='active';
+			num_lis[i].firstElementChild.className='active_num';
+		}
+	</script>

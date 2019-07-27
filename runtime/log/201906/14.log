@@ -1,0 +1,5 @@
+---------------------------------------------------------------
+[ 2019-06-14T09:01:17+00:00 ] 127.0.0.1 GET /contact.html
+[ info ] 127.0.0.1:7002/contact.html [运行时间：0.007672s][吞吐率：130.34req/s] [内存消耗：267.06kb] [文件加载：36]
+[ error ] [0]Parse error: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file[E:\data\newsyun\application\common.php:262]
+[ info ] [ LOG ] INIT File

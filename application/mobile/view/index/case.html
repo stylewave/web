@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{$seo.title}</title>
+	<meta name="baidu-site-verification" content="C6R2exmaNx" />
+	<meta name="keywords" content="{$seo.keywords}" />
+	<meta name="description" content="{$seo.description}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+	</head>
+	<body>
+		{include file="public/header" /}
+		<!-- banner -->
+		<div class="aboutBanner">
+			<a href="/case/130.html">
+		    	<img src="__STATIC__/mobile/images/case01.png" alt="">
+	      	</a>
+		</div>
+		<!-- banner end -->
+		<!-- 内容 -->
+		<div class="case">
+			<div class="caseMenu">
+				<a href="/case.html">全部案例</a>
+				<!-- {foreach $mobilecase as $v}
+				<li><a href="/case.html?pid={$v.id}" title="{$v.title}">{$v.title}</a></li>
+			  {/foreach}		 -->
+				<select id="pagenum" onchange="func()">
+					{foreach $mobilecase as $v}
+					<option value="{$v.id}">{$v.title}</option>
+					{/foreach}	
+					
+				</select>
+			</div>
+			<ul class="anim anim-1 anim-show ul">
+				{foreach $list as $v}
+					<li>
+						<div class="imgs"><img src="{$v.img}" alt="{$v.title}"></div>
+						<div class="allist-cnt">
+							<a href="/case/{$v.id}.html" title="{$v.title}">
+								<h5>{$v.title}</h5>
+							</a>
+						</div>
+					</li>
+				{/foreach}
+			
+			</ul>
+			<div class="page">
+					{$list->render()|raw}
+			
+			</div>
+		</div>
+		<!-- 内容 end -->
+		<!-- 资讯 end -->
+		{include file="public/footer" /}
+	</body>
+</html>
+<script>
+  function func(){
+        var vs = $("#pagenum").find("option:selected").val();
+     
+        window.location.href = "/case.html?pid="+vs;
+        // alert(vs);
+        }
+
+
+</script>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>{$seo.title}</title>
+	<meta name="baidu-site-verification" content="C6R2exmaNx" />
+	<meta name="keywords" content="{$seo.keywords}" />
+	<meta name="description" content="{$seo.description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+</head>
+<body>
+	{include file="public/header" /}
+	<!-- banner -->
+		<div class="swiper-container banner clear">
+			<div class="swiper-wrapper">
+				{foreach $banner as $v}
+				<div class="swiper-slide">
+					<a href="{$v.url}"></a>
+					<img src="{$v.img}" alt="{$v.title}">
+				</div>
+				{/foreach}
+				
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	<!-- banner end -->
+	<!-- 建站分类 -->
+		<div class="indexOne">
+			<ul>
+				<li>
+					<a href="/website.html">
+					<img src="__STATIC__/mobile/images/ico01.png" alt="">
+					<p>网站建设</p>
+					</a>
+				</li>
+				<li>
+					<a href="/seogjc.html">
+					<img src="__STATIC__/mobile/images/ico02.png" alt="">
+					<p>SEO优化</p>
+				</a>
+				</li>
+				<li>
+					<a href="/network.html">
+					<img src="__STATIC__/mobile/images/ico03.png" alt="">
+					<p>网络推广</p>
+				</a>
+				</li>
+				<li>
+				<a href="/case.html">
+					<img src="__STATIC__/mobile/images/ico04.png" alt="">
+					<p>成功案例</p>
+				</a>
+				</li>
+			</ul>
+		</div>
+	<!-- 建站分类 end -->
+	<!-- 案例 -->
+		<div class="indexCase">
+			<div class="wid">
+				<div class="tit">案例介绍</div>
+				<a href="/case.html" class="more">更多</a>
+			</div>
+			<ul>
+					{foreach $case as $k=>$v}
+				<li><a href="/case/{$v.id}.html">
+					<img src="{$v.img}" alt="{$v.title}">
+					<div class="box">
+						<dl class="left">
+							<dt>{$v.publishtime|getSubstrTime=7,3,2}</dt>
+							<dd>{$v.publishtime|getSubstrTime=0,3,1}</dd>
+						</dl>
+						<div class="right">
+							<p>{$v.title}</p>
+							<span>{$v.stitle}</span>
+						</div>
+					</div></a>
+				</li>
+				{/foreach}
+				
+			</ul>
+		</div>
+	<!-- 案例 end -->
+	<!-- 资讯 -->
+		<div class="indexNews">
+			<div class="tab" id="tab">
+					{foreach $newnav as $k=>$v}
+						  <p {if $k==0}class="active"{/if}>{$v.title}</p>
+						{/foreach}
+				<!-- <p class="active">SEO优化</p>
+				<p>公司新闻</p>
+				<p>网络推广</p>
+				<p>建站知识</p> -->
+			</div>
+			<div class="tdiv" id="tdiv">
+				{foreach $newnav as $k=>$v}
+					<div {if $k==0}style="display: block;" {/if}>
+			
+					<ul>
+						{foreach $v.list as $kk=>$vv}
+						<li><a href="/news/{$vv.id}.html">
+							<h2>{$vv.title}</h2>
+							<p>{$vv.desc|getSubstr=0,20}</p>
+							<div class="box">
+								<dt>{$vv.publishtime|getSubstrTime=7,3,2}</dt>
+								<dd>{$vv.publishtime|getSubstrTime=0,3,1}</dd>
+							</div>
+							<div class="more"></div></a>
+						</li>
+						{/foreach}
+					
+					</ul>
+				</div>
+				{/foreach}
+				<!-- <div>
+					2
+				</div>
+				<div>
+					3
+				</div>
+				<div>
+					4
+				</div> -->
+			</div>
+		</div>
+	<!-- 资讯 end -->
+	{include file="public/footer" /}
+</body>
+</html>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>
+
+<!-- <script src="__STATIC__/mobile/js/swiper.jquery.min.js"></script> -->
+<script>
+    //banner图
+    var swiper = new Swiper('.banner', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+</script>
+<script>
+    $(function(){
+        $("#tab p").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            var index=$(this).index();
+            $("#tdiv > div").eq(index).show().siblings().hide();
+        });
+    });
+</script>

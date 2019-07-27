@@ -1,0 +1,203 @@
+<!--[if lt IE 9]>
+        <script src="__STATIC__/home/js/html5shiv.min.js"></script>
+        <script src="__STATIC__/home/js/respond.min.js.js"></script>
+    <![endif]-->
+
+
+<!--头部begin-->
+<script type="text/javascript" src="__STATIC__/home/js/jquery.superslide.2.1.1.js"></script>
+<script src="__STATIC__/home/js/anim.js"></script>
+<style>
+    .nav li {
+        position: relative;
+    }
+</style>
+<!-- <script src="__STATIC__/home/js/global.js" type="text/javascript"></script> -->
+<script type="text/javascript">
+</script>
+<!-- <div style="height:124px; overflow:hidden; background:none;"></div> -->
+<div style=" height:86px; position:fixed; top:0; width:100%;z-index:1000;background:none;">
+    <!-- <div class="top01">
+		<div class="gy2">
+			<span class="l">欢迎您光临深圳市云天下信息技术有限公司！</span>
+			<div class="top01_center">
+				<img src="__STATIC__/home/images/top_tel_icon.png" width="18" height="18" alt="电话图标" /> 全国热线：40004-60001 深圳：0755-82968506
+			</div>
+		</div>
+	</div> -->
+    <div class="top02" style=" background-color:#fff; ">
+        <div class="top02_center">
+            <div class="logo">
+                <a href="/" title="云天下"><img src="{$config.logo}" width="180" height="60" alt="深圳网站建设" /></a>
+                <div>
+                    <div class="logo-year"><span id="numBox1">10</span>年</div>
+                    <div class="logo-text">
+                        <span>云</span>
+                        <span>天</span>
+                        <span>下</span>
+                        <span>,</span>
+                        <span>创</span>
+                        <span>未</span>
+                        <span>来</span>
+                        <span>.</span>
+                        <span>.</span>
+                        <span>.</span>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 导航 -->
+            <div class="nav">
+                <ul>
+                    <li id="m1" class="m {if $nav==" index "} m_active {/if}"> <a href="/" class="aa1 mmm" title="首页">
+						首页</a></li>
+                    <li id="m3" class="m {if $nav==" website "} m_active {/if}"> <a href="/website.html" class="aa3 mmm" title="网站建设">网站建设</a>
+                        <div class="sub">
+                            <div class="nav_xiao">
+                                <div class="xiao_one">
+                                    <ul>
+                                        <li><a href="/website.html" title="企业营销型网站建设"><i class="bgs1"></i>企业营销型网站建设</a>
+                                        </li>
+                                        <li><a href="/website02.html" title="创意品牌型网站建设"><i
+													class="bgs2"></i>创意品牌型网站建设</a></li>
+                                        <li><a href="/website03.html" title="购物商城型网站建设"><i
+													class="bgs3"></i>购物商城型网站建设</a></li>
+                                        <li><a href="/website04.html" title="手机微信网站建设"><i class="bgs4"></i>手机微信网站建设</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="m5" class="m {if $nav==" seo "} m_active {/if}"> <a href="/seogjc.html" class="aa5 mmm" title="SEO优化">SEO优化</a>
+                        <div class="sub">
+                            <div class="nav_xiao max1100">
+                                <div class="xiao_five">
+                                    <img alt="SEO优化" src="__STATIC__/home/images/cr_img1.png">
+                                </div>
+                                <div class="xiao_five2">
+                                    <p>
+                                        <a href="/seoyouhua.html" title="SEO整站优化"><i class="bgs1"></i>- SEO整站优化</a>
+                                    </p>
+
+
+                                    <p>
+                                        <a href="/seogjc.html" title="关键词优化"><i class="bgs1"></i>- 关键词优化</a>
+                                    </p>
+                                    <p>
+                                        <a href="/seojz.html" title="SEO优化+网站建设"><i class="bgs1"></i>- SEO优化+网站建设</a>
+                                    </p>
+                                    <p>
+                                        <a href="/seopm.html" title="seo快速排名"><i class="bgs1"></i>- SEO快速排名</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <!-- <li id="m5" class="m {if $nav=="network"} m_active {/if}"><a href="/seopm.html" class="aa5 mmm" title="快排">快排</a></li> -->
+                    <li id="m5" class="m {if $nav==" network "} m_active {/if}"> <a href="/network.html" class="aa5 mmm" title="网络推广">网络推广</a></li>
+
+                    <li id="m4" class="m {if $nav==" case "} m_active {/if}"> <a href="/case.html" class="aa4 mmm" title="成功案例">成功案例</a>
+                        <div class="sub">
+                            <div class="nav_xiao max1100">
+                                <div class="xiao_five">
+                                    <img alt="深圳网站建设" src="__STATIC__/home/images/cr_img1.png">
+                                </div>
+                                <div class="xiao_five2">
+
+                                    <p>
+                                        {foreach $mobilecase as $k=>$v} {if $k
+                                        <2} <a href="/case.html?pid={$v.id}" title="{$v.title}"><i class="bgs1"></i>- {$v.title}</a>
+                                            {/if} {/foreach}
+
+                                    </p>
+                                    <p>
+                                        {foreach $mobilecase as $k=>$v} {if $k>1 && $k
+                                        <4} <a href="/case.html?pid={$v.id}" title="{$v.title}"><i class="bgs1"></i>- {$v.title}</a>
+                                            {/if} {/foreach}
+
+                                    </p>
+                                    <p>
+                                        {foreach $mobilecase as $k=>$v} {if $k>3}
+                                        <a href="/case.html?pid={$v.id}" title="{$v.title}"><i class="bgs1"></i>-
+											{$v.title}</a> {/if} {/foreach}
+
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="m8" class="m {if $nav==" solution "} m_active {/if}"> <a href="/solutions.html" class="aa8 mmm" title="解决方案">解决方案</a>
+                        <div class="sub">
+                            <div class="nav_xiao">
+                                <div class="xiao_four l">
+                                    <h2></h2>
+                                    <ul class="ul">
+                                        {foreach $solutiondata as $k=>$v} {if $k
+                                        <8} <li><a href="/solutions_detail.html?id={$v.id}" title="{$v.title}"><b>{$v.title}</b>{$v.desc|getSubstr=0,10}</a>
+                    </li>
+                    {/if} {/foreach}
+                    </ul>
+                    </div>
+                    <div class="xiao_four r">
+                        <div class="ul2">
+                            <h2></h2>
+                            <ul>
+                                {foreach $solutiondata as $k=>$v} {if $k>7}
+                                <li><a href="/solutions_detail.html?id={$v.id}" title="{$v.title}"><b>{$v.title}</b>{$v.desc|getSubstr=0,10}</a></li>
+                                {/if} {/foreach}
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+
+                    </div>
+                    </li>
+                    <li id="m5" class="m {if $nav==" news "} m_active {/if}"> <a href="/news.html" class="aa5 mmm" title="新闻动态">新闻动态</a>
+                        <div class="sub">
+                            <div class="nav_xiao">
+                                <div class="xiao_three">
+                                    <ul>
+                                        {foreach $mobilenews as $k=>$v}
+                                        <li>
+                                            <a href="{$v.url}"><img {if $v.img}src="{$v.img}" {else /}src="__STATIC__/home/images/nav_news.jpg" {/if} alt="{$v.title}" title="{$v.title}" />{$v.title}</a>
+                                        </li>
+                                        {/foreach}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="m2" class="m {if $nav==" about "} m_active {/if}"> <a href="/about.html" rel="nofollow" class="aa2 mmm" title="关于我们">关于我们</a>
+                        <div class="sub">
+                            <div class="nav_xiao">
+                                <div class="xiao_two">
+                                    <ul>
+                                        <li><a href="/about.html" title="公司介绍"><i class="bgs1"></i>公司介绍</a></li>
+                                        <li><a href="/remittance.html" title="汇款方式"><i class="bgs2"></i>汇款方式</a></li>
+                                        <li><a href="/company_team.html" title="公司团队"><i class="bgs3"></i>公司团队</a></li>
+                                        <li><a href="/development.html" title="发展历程"><i class="bgs4"></i>发展历程</a></li>
+                                        <li><a href="/contact.html" title="联系我们"><i class="bgs4"></i>联系我们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li id="m7" class="m"><a href="contact.html" class="aa7 mmm">联系我们</a></li> -->
+                </ul>
+            </div>
+            <!-- 导航 end -->
+        </div>
+        <div class="hotphone">
+            <img src="/public/static/home/images/2x.png" alt="">
+            <p class="phone02" style="color:red;">400-718-6599</p>
+        </div>
+    </div>
+</div>
+<!--头部end-->

@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">基本信息</a></li>
+        </ul>
+        <form action="{:Url::build('admin/Youhua/editpt');}" enctype="multipart/form-data" method="post" name="qxform" id="qxform">
+        <div class="tab-content">
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+              <!--<input type="hidden" name="__token__" value="{$Request.token}" />-->
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <section id="new">
+              <!--<h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}banner</h4>-->
+                <div><br />
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+              <div class="row fontawesome-icon-list">
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                  <div class="form-group">
+                    选择分类：<select class="form-control select2" style="width: 30%;" name="type" id="type" onchange="getValue()">
+                    <option selected="selected" value="0">请选择分类</option>
+                    {foreach $catelist as $k=>$rbac}
+                    <option value="{$k}" {if $k == $info['type']}selected{/if}>{$rbac}</option>
+                    {/foreach}
+                  </select>
+                    <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                  标题：<input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+             
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                    图片：<span id="selectpic" style="cursor:pointer;color:#1E88C7;background: #D0EEFF;border-radius: 5px;padding:5px 22px;">选择图片</span>
+                    <div style="margin-left: 63px;" id="preview"></div>
+                    <input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+                </div>
+                  {if !empty($info['img'])}
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                    原有图片：<a href="{$info.img}" target="_blank"><img src="{$info.img}" width="250" height="150" style="padding-bottom:50px"></a>
+                  </div>
+                  {/if}
+           
+              
+              </div>
+            </section>
+          </div>
+          <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="qxsubmit();">提交</button><span class="icon icon-ms margin-small" ></span>
+        </div>
+        </form>
+        <!-- /.tab-content -->
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+  <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+  <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+<script src="__STATIC__/admin/adminlte/bower_components/select2/js/select2.min.js"></script>
+<script src="__STATIC__/admin/adminlte/bower_components/select2/js/i18n/zh-CN.js"></script>
+<script>
+    function qxsubmit() {
+        if($('#cateid').val() <1) {
+            tips('请选择分类！','.icon-cateid','cateid');
+            return false;
+        }
+        if($('#title').val() == '') {
+            tips('请填写标题！','.icon-title','title');
+            return false;
+        }
+        document.qxform.submit();
+    }
+    function getValue(){
+        if($("#cateid option:selected").text() == '合作客户'){
+            $('#department_a').addClass('department_a');
+        }
+    }
+    $(function() {
+        $('.select2').select2({
+            language:'zh-CN'
+        });
+        $("#selectpic").click(function () {
+            $("#upload").click();
+            $("#upload").on("change",function(){
+                previewImage(this,'preview',200,200);
+            });
+        });
+        $("#selectpics").click(function () {
+            $("#uploads").click();
+            $("#uploads").on("change",function(){
+                previewImages(this,'previews',200,200);
+            });
+        });
+    });
+</script>
+    <style>
+        .col-sm-4 input{text-indent:10px;}
+        #preview #imghead{margin-top:0px !important;}
+        .department_a{
+          display: block !important;}
+    </style>
+</section>
+
+
+
+

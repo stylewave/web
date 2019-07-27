@@ -1,0 +1,71 @@
+{__NOLAYOUT__}
+<table id="example1" class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>标题</th>
+        <th>所属分类</th>
+
+        <th>是否推荐</th>
+        <th>分类排序</th>
+        <th>属性类型</th>
+        <th>属性值</th>
+        <th>封面图</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {foreach $list.data as $li}
+    <tr>
+        <td>{$li.title}</td>
+        <td>{$li.catename}</td>
+
+        <td>
+            {if $li['ist'] == 1}
+            <a href="javascript:void(0);" onclick="isdo('确定要取消推荐？','{:Url::build('admin/Goods/ajaxAttr',['id'=>$li['id'],'do'=>'qxtj','cateid'=>$li['cateid']])}',this);">
+                <i class="fa fa-check"></i>
+            </a>
+            {else/}
+            <a href="javascript:void(0);"  onclick="isdo('确定要推荐？','{:Url::build('admin/Goods/ajaxAttr',['id'=>$li['id'],'do'=>'tj','cateid'=>$li['cateid']])}',this);">
+                <i class="fa fa-close"></i>
+            </a>
+            {/if}
+        </td>
+
+        <td><input type="text" tipvalue="cateordertip" size="4" value="{$li.orders}" onblur="isdo('','{:Url::build('admin/Goods/ajaxAttr',['id'=>$li['id'],'do'=>'order','cateid'=>$li['cateid']])}',this);"/> <span class="icon icon-cateordertip margin-small" ></span></td>
+
+
+        <td>{$li.typename}</td>
+        <td>{$li.value}</td>
+
+        <td>{php}echo empty($li['thumb']) ? '没有封面图' : '<a href="'.$li['img'].'" target="_blank"><img src="'.$li['thumb'].'"></a>';{/php}</td>
+
+        <td>{$li.addtime}</td>
+        <td><a href="{:Url::build('admin/Goods/addAttr',['id'=>$li['id'],'cateid'=>$li['cateid']])}" style="color: #333333;"><i class="fa fa-edit"></i>修改</a>&nbsp;&nbsp;  <a href="javascript:void(0);" style="color: #333333;" onclick="isdel('您确定要删除这个文章吗？','{:Url::build('admin/Goods/delAttr',['id'=>$li['id'],'cateid'=>$li['cateid']])}');"><i class="fa fa-trash-o"></i>删除</a></td>
+    </tr>
+    {/foreach}
+
+    </tbody>
+
+
+
+
+
+
+</table>
+
+<div class="row">
+    <div class="col-sm-5">
+        <div class="dataTables_info"  role="status" aria-live="polite">
+            <!--Showing 1 to 10 of 57 entries-->
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" >
+
+            {$list.page|raw}
+
+        </div>
+    </div>
+</div>

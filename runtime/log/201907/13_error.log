@@ -1,0 +1,35 @@
+---------------------------------------------------------------
+[ 2019-07-13T09:07:19+08:00 ] 127.0.0.1 GET /admin/city/citylist
+[ error ] [1]Uncaught think\exception\ErrorException: Undefined variable: userinfo_auto in E:\data\newsyun\runtime\temp\38238a8349b80b05246b2e6a029eec41.php:49
+Stack trace:
+#0 E:\data\newsyun\runtime\temp\38238a8349b80b05246b2e6a029eec41.php(49): think\Error::appError(8, 'Undefined varia...', 'E:\\data\\newsyun...', 49, Array)
+#1 E:\data\newsyun\thinkphp\library\think\template\driver\File.php(55): include('E:\\data\\newsyun...')
+#2 E:\data\newsyun\thinkphp\library\think\Template.php(233): think\template\driver\File->read('E:\\data\\newsyun...', Array)
+#3 E:\data\newsyun\thinkphp\library\think\view\driver\Think.php(87): think\Template->fetch('E:\\data\\newsyun...', Array, Array)
+#4 E:\data\newsyun\thinkphp\library\think\View.php(175): think\view\driver\Think->fetch('E:\\data\\newsyun...', Array, Array)
+#5 E:\data\newsyun\thinkphp\library\think\response\View.php(38): think\View->fetch('E:\\data\\newsyun...', Array)
+#6 E:\data\newsyun\thinkphp\library\think\Response.php(378): think\response\View->output('E:\\data\\newsyun...
+---------------------------------------------------------------
+[ 2019-07-13T09:37:59+08:00 ] 127.0.0.1 GET /admin/city/citylist
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yuntianxiav2.city' doesn't exist
+---------------------------------------------------------------
+[ 2019-07-13T10:26:10+08:00 ] 127.0.0.1 GET /web
+[ error ] [8]未定义变量: nav
+---------------------------------------------------------------
+[ 2019-07-13T14:52:06+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
+---------------------------------------------------------------
+[ 2019-07-13T14:53:03+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
+---------------------------------------------------------------
+[ 2019-07-13T15:09:47+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [2]json_decode() expects parameter 1 to be string, array given
+---------------------------------------------------------------
+[ 2019-07-13T15:09:48+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [2]json_decode() expects parameter 1 to be string, array given
+---------------------------------------------------------------
+[ 2019-07-13T15:11:10+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [2]json_decode() expects parameter 1 to be string, array given
+---------------------------------------------------------------
+[ 2019-07-13T15:11:14+08:00 ] 127.0.0.1 POST /contact.html
+[ error ] [2]json_decode() expects parameter 1 to be string, array given

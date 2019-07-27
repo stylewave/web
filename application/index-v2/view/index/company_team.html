@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$seo.title}</title>
+		<meta name="baidu-site-verification" content="C6R2exmaNx" />
+		<meta name="keywords" content="{$seo.keywords}" />
+		<meta name="description" content="{$seo.description}" />
+		<script src="__STATIC__/home/js/jquery.min.js" type="text/javascript"></script>
+		<!-- <script src="__STATIC__/home/js/nav.js" type="text/javascript"></script> -->
+		<script src="__STATIC__/home/js/zsl.js" type="text/javascript"></script>
+		<link href="__STATIC__/home/css/css2018.css" rel="stylesheet" type="text/css">
+		<link href="__STATIC__/home/css/zsl.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="__STATIC__/home/css/global.css">
+	</head>
+	<body class="neiye">
+		<script type="text/javascript" src="__STATIC__/home/js/jquery.superslide.2.1.1.js"></script>
+		<script src="__STATIC__/home/js/anim.js">
+			//动画
+		</script>
+		<style>
+			.nav li{ position:relative;}
+		</style>
+		<!--  -->
+		
+				{include file="public/header" /}
+		
+		<!--  -->
+		<!--banner begin-->
+		<div class="solutions_banner" style="background-image:url(__STATIC__/home/images/columnbanner1.jpg);">
+			<img src="__STATIC__/home/images/columnbanner1.jpg" alt="" />
+			<div class="txts td">
+				<h1>公司团队</h1>
+				<p>任何的用户潜意识，都需要一个我们这样得人去拉动他内心的需求。</p>
+
+			</div>
+		</div>
+		<!--banner end-->
+		<!--正文befgin-->
+		<div class="jobPage">
+			<div class="team">
+				<div class="columnTitle">团队介绍</div>
+				<div class="tab">
+					<ul>
+						<li>销售部</li>
+						<li>技术部</li>
+						<li class="on">设计部</li>
+						<li>客服部</li>
+					</ul>
+				</div>
+				<div class="wrap">
+					<div class="tabBox">
+						<div class="box">
+							<ul>
+							{foreach $companyteam as $v}	
+								<li>
+									<div class="pic"><img src="{$v.img}"></div>
+									<div class="text">
+										<div class="name">{$v.title}</div>
+										<div class="duties">{$v.desc}</div>
+									</div>
+								</li>
+						 {/foreach}		
+								
+							</ul>
+						</div>
+						<div class="box">
+							<ul>
+							{foreach $companyteam2 as $v}	
+									<li>
+										<div class="pic"><img src="{$v.img}"></div>
+										<div class="text">
+											<div class="name">{$v.title}</div>
+											<div class="duties">{$v.desc}</div>
+										</div>
+									</li>
+							 {/foreach}		
+							</ul>
+						</div>
+						<div class="box">
+							<ul>
+									{foreach $companyteam3 as $v}	
+									<li>
+										<div class="pic"><img src="{$v.img}"></div>
+										<div class="text">
+											<div class="name">{$v.title}</div>
+											<div class="duties">{$v.desc}</div>
+										</div>
+									</li>
+							 {/foreach}		
+							</ul>
+						</div>
+						<div class="box">
+							<ul>
+									{foreach $companyteam4 as $v}	
+									<li>
+										<div class="pic"><img src="{$v.img}"></div>
+										<div class="text">
+											<div class="name">{$v.title}</div>
+											<div class="duties">{$v.desc}</div>
+										</div>
+									</li>
+							 {/foreach}		
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="culture">
+				<div class="wrap">
+					<div class="columnTitle">
+						<div class="tit">企业文化</div>
+						<div class="txt"><a href="/" style="color:#666666;">云天下</a>视每一位员工为不可或缺的家庭成员，关注每一位员工，尊重每位员工的个性并感恩员工为公司所做的贡献。</div>
+					</div>
+					<div class="content">
+						<div class="picScroll-left">
+							<a class="next"></a>
+							<a class="prev"></a>
+							<div class="bd">
+								<ul class="picList">
+									{foreach $companyteam5 as $v}
+									<li><a href="#"><img src="{$v.img}"></a></li>
+									{/foreach}
+									<!-- <li><a href="#"><img src="__STATIC__/home/images/jobpage1.jpg"></a></li> -->
+									<!--<li><a href="#"><img src="__STATIC__/home/images/jobpage1.jpg"></a></li>
+							<li><a href="#"><img src="__STATIC__/home/images/jobpage1.jpg"></a></li>-->
+								</ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							jQuery(".picScroll-left").slide({
+								titCell: ".hd ul",
+								mainCell: ".bd ul",
+								autoPage: true,
+								effect: "left",
+								autoPlay: true,
+								vis: 1,
+								scroll: 1,
+								pnLoop: true,
+								interTime: 3500,
+								trigger: "click"
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="recruitment">
+				<div class="wrap">
+					<div class="columnTitle">
+						<div class="tit">人才招聘</div>
+						<div class="txt">在这个实现自我价值与梦想的地方，良好的团队、协作的文化、卓越的技术，每位员工都有机会在不同岗位点亮属于自己的荣耀时刻。</div>
+					</div>
+					<div class="list">
+						<ul>
+						{foreach $companyteam6 as $k=>$v}
+							<li>
+								<a href="javacript:;">
+									<div class="icon1"><img src="__STATIC__/home/images/recruitment_icon{$k+1}.png"></div>
+									<div class="icon2"><img src="__STATIC__/home/images/recruitment_icon{$k+11}.png"></div>
+									<div class="tit">{$v.title}</div>
+									<div class="txt">{$v.desc}</div>
+									<div class="btn"></div>
+								</a>
+							</li>
+							{/foreach}
+							<!-- <li>
+								<a href="/job/qianduankaifa.html">
+									<div class="icon1"><img src="__STATIC__/home/images/recruitment_icon2.png"></div>
+									<div class="icon2"><img src="__STATIC__/home/images/recruitment_icon22.png"></div>
+									<div class="tit">WEB前端工程师</div>
+									<div class="txt">如果你熟悉HTML5+CSS3，有响应式网站和手机微信网站前端开发经验，熟练掌握如何处理浏览器兼容性，就加入我们吧。</div>
+									<div class="btn"></div>
+								</a>
+							</li>
+							<li>
+								<a href="/job/gaojishejishi.html">
+									<div class="icon1"><img src="__STATIC__/home/images/recruitment_icon3.png"></div>
+									<div class="icon2"><img src="__STATIC__/home/images/recruitment_icon33.png"></div>
+									<div class="tit">高级网页设计师</div>
+									<div class="txt">你敢于创新，对事物保持好奇心，追求细节 但不偏执。或许当 idea 上线， 你会有一丝成就感。</div>
+									<div class="btn"></div>
+								</a>
+							</li>
+							<li>
+								<a href="/job/xiaoshoudaibiao.html">
+									<div class="icon1"><img src="__STATIC__/home/images/recruitment_icon4.png"></div>
+									<div class="icon2"><img src="__STATIC__/home/images/recruitment_icon44.png"></div>
+									<div class="tit">销售代表</div>
+									<div class="txt">有网站建设相关行业业务经理，积极进取、勇于拼搏、有责任感，就加入易百讯业务部。</div>
+									<div class="btn"></div>
+								</a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script language="javascript">
+			$(function(){
+	tabSwitch( $(".tab"),$(".tabBox") );
+});
+</script>
+		<!--正文end-->
+
+			{include file="public/footer" /}
+	
+	</body>
+</html>
+

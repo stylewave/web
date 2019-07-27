@@ -1,0 +1,15 @@
+---------------------------------------------------------------
+[ 2019-06-26T09:40:42+08:00 ] 127.0.0.1 GET /captcha
+[ error ] [2002]SQLSTATE[HY000] [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+---------------------------------------------------------------
+[ 2019-06-26T12:51:40+08:00 ] 127.0.0.1 GET /admin/index/verify
+[ error ] [1]Uncaught think\exception\ErrorException: Undefined variable: userinfo_auto in E:\data\newsyun\runtime\temp\38238a8349b80b05246b2e6a029eec41.php:49
+Stack trace:
+#0 E:\data\newsyun\runtime\temp\38238a8349b80b05246b2e6a029eec41.php(49): think\Error::appError(8, 'Undefined varia...', 'E:\\data\\newsyun...', 49, Array)
+#1 E:\data\newsyun\thinkphp\library\think\template\driver\File.php(55): include('E:\\data\\newsyun...')
+#2 E:\data\newsyun\thinkphp\library\think\Template.php(233): think\template\driver\File->read('E:\\data\\newsyun...', Array)
+#3 E:\data\newsyun\thinkphp\library\think\view\driver\Think.php(87): think\Template->fetch('E:\\data\\newsyun...', Array, Array)
+#4 E:\data\newsyun\thinkphp\library\think\View.php(175): think\view\driver\Think->fetch('E:\\data\\newsyun...', Array, Array)
+#5 E:\data\newsyun\thinkphp\library\think\response\View.php(38): think\View->fetch('E:\\data\\newsyun...', Array)
+#6 E:\data\newsyun\thinkphp\library\think\Response.php(378): think\response\View->output('E:\\data\\newsyun...

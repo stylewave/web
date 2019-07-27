@@ -1,0 +1,228 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">属性基本信息</a></li>
+        </ul>
+        <form action="{:Url::build('admin/Goods/addAttr');}" enctype="multipart/form-data" method="post" name="qxform" id="qxform">
+        <div class="tab-content">
+          <!-- Font Awesome Icons -->
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+              <input type="hidden" name="__token__" value="{$Request.token}" />
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <input type="hidden" name="cateid"  value="{$info.cateid}" />
+            <section id="new">
+              <h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}产品属性</h4>
+                <div>
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+
+              <div class="row fontawesome-icon-list" id="brandinfoid">
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  属性名称：<input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                    属性图片：<span id="selectpic" style="cursor:pointer;color:blue">点击选择图片</span>
+                    <div style="margin-left: 63px;" id="preview"></div>
+                    <input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+                </div>
+                  {if !empty($info['img'])}
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      原有图片：<a href="{$info.img}" target="_blank"><img src="{$info.thumb}"></a>
+                  </div>
+                  {/if}
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  属性排序：<input type="text" style="color: #444444;width: 20%" id="orders" name="orders" value="{$info.orders}"> <span style="color: red">>=0，越小越前，前后台都有效，默认0</span><span class="icon icon-order margin-small" ></span>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  是否推荐：<label style="padding-right:10px">
+                  <input type="radio" name="ist" value="1" {if $info['ist'] == 1}checked{/if}> 推荐
+                </label>
+                  <label>
+                    <input type="radio" name="ist" value="0" {if $info['ist'] == 0}checked{/if}> 不推荐
+                  </label>
+                </div>
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  属性类型：<label style="padding-right:10px">
+                  <input type="radio" name="type" value="0" {if $info['type'] == 0}checked{/if}> 单选
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <input type="radio" name="type" value="1" {if $info['type'] == 1}checked{/if}> 多选
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label>
+                    填写<input type="radio" name="type" value="2" {if $info['type'] == 2}checked{/if}>
+                  </label> &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red">*</span>
+                  <div id="attrlistid">
+                    <div>
+                      <span  style="color: red">显示顺序按照填写的排序显示，不填默认从0开始，越小越前，选择填写下面的值无效（不用写）</span>
+                    </div>
+                    <div>
+                      属性值：<input type="text" name="attrvalue[]" id="icon-attrvalue" value="{$info.attrone.value}" style="color: #444444;width: 20%;height: 25px;" > &nbsp;&nbsp;排序：<input type="text" name="attrorders[]" value="{php}echo $info['attrone']['orders']??0;{/php}" style="color: #444444;width: 10%;height: 25px;" ><span class="icon icon-attrvalue margin-small" ></span><span id="attrmoreid" style="color: blue;margin-left: 15px;cursor:pointer" onclick="kelongs();">添加多个选项</span><span style="color: red">&nbsp;&nbsp;*</span>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                    <div class="form-group">
+                      所属分类：<select class="form-control select2" id="cateidid" style="width: 50%;" name="cateids[]" >
+                      <option selected="selected" value="0">请选择分类</option>
+                        {foreach $catelist as $rbac}
+                          <option value="{$rbac.id}" {if $rbac['id'] == $info['one']}selected{/if}>{php}if($rbac['dj'] > 0)  {echo str_repeat(" L__ ",$rbac['dj'])." ";}{/php}{$rbac.title}</option>
+                        {/foreach}
+                      </select>
+                      <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                      <span style="color: blue;margin-left: 15px;cursor:pointer" onclick="kelong();">添加多个分类</span>
+                    </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- /#fa-icons -->
+          <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="qxsubmit();">提交</button><span class="icon icon-ms margin-small" ></span>
+        </div>
+        </form>
+        <!-- /.tab-content -->
+      </div>
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+  <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/select2.min.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/i18n/zh-CN.js"></script>
+<script>
+
+  function jisuanorder() {
+      var len = $("input[name='attrvalue[]']").length;
+      for (var i=0;i<len;i++) {
+          $("input[name='attrorders[]']").eq(i).val(i);
+      }
+  }
+
+  function kelongs(value) {
+      var value = value||'';
+      if(value!='') {
+          var isv = value.value;
+          var os = value.orders;
+      } else {
+          var isv = '';
+          var os = '';
+
+      }
+      var div = '<div>\n' +
+          '                      属性值：<input type="text" name="attrvalue[]" value="'+isv+'" style="color: #444444;width: 20%;height: 25px;" > &nbsp;&nbsp;排序：<input type="text"  name="attrorders[]" value="'+os+'"  style="color: #444444;width: 10%;height: 25px;" ><span style="color: blue;margin-left: 15px;cursor:pointer" onclick="scattr(this);">删除</span>\n' +
+          '                    </div>';
+      $('#attrlistid').append(div);
+      jisuanorder();
+  }
+
+  function scattr(nav) {
+      $(nav).parent().remove();
+      jisuanorder();
+  }
+
+  function kelong(cateid) {
+      var cateid = cateid||-1;
+      var div = '<div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">\n' +
+          '                    <div class="form-group">\n' +
+          '                      所属分类：<select class="form-control select2  ttttxxxx" style="width: 50%;" name="cateids[]" >\n' +
+          '                      <option selected="selected" value="0">请选择分类</option>\n' +
+          '                        {foreach $catelist as $rbac}\n' +
+          '                          <option value="{$rbac.id}" ';
+      var isss = '';
+      if(cateid == "{$rbac.id}") {
+          isss = "selected";
+      }
+      div+=isss+'>{php}if($rbac['dj'] > 0)  {echo str_repeat(" L__ ",$rbac['dj'])." ";}{/php}{$rbac.title}</option>\n' +
+          '                        {/foreach}\n' +
+          '                      </select>\n' +
+          '                      <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>\n' +
+          '                      <span style="color: blue;margin-left: 15px;cursor:pointer" onclick="deletediv(this);">删除</span>\n' +
+          '                    </div>\n' +
+          '                </div>';
+    $('#brandinfoid').append(div);
+    $(".ttttxxxx").select2({
+        language:'zh-CN'
+    });
+  }
+
+  function deletediv(nav) {
+      $(nav).parent().parent().remove();
+  }
+
+    function qxsubmit() {
+        if($('#title').val() == '') {
+            tips('请填写名称！','.icon-title','title');
+            return false;
+        }
+//        var file=$("#upload");
+//        if($.trim(file.val())==''){
+//            tips('请上传封面图！','.icon-cateid','cateid');
+//            return false;
+//        }
+        var value = parseInt($("input[name='type']:checked").val());
+        if($.inArray(value,[0,1]) >=0) {
+            var attrvalue = '';
+            $("input[name='attrvalue[]']").each(function(){
+                if($(this).val() != '') {
+                    attrvalue+='ok';
+                }
+
+            })
+            if(attrvalue == '') {
+                tips('请填写属性值！','.icon-attrvalue','icon-attrvalue');
+                return false;
+            }
+
+        }
+
+        var select = '';
+        $("select[name='cateids[]']").each(function(i){
+            var selected = parseInt($(this).val());
+            if(selected > 0) {
+                select+= 'ok';
+            }
+        })
+        if(select == '') {
+            tips('请选择分类！','.icon-cateid','cateidid');
+            return false;
+        }
+        document.qxform.submit();
+    }
+
+    $(function() {
+
+        var two = "{$info.two}";
+        if(two != '') {
+            for(var i=0;i<two.split(',').length;i++) {
+                kelong(two.split(',')[i]);
+            }
+        }
+
+        var attrlist = eval({$info.attrtwo|raw});
+        if(attrlist != '') {
+            $.each(attrlist, function (index, d) {
+                kelongs(d);
+            })
+        }
+
+        $('.select2').select2({
+            language:'zh-CN'
+        });
+        $("#selectpic").click(function () {
+            $("#upload").click();
+            $("#upload").on("change",function(){
+                previewImage(this,'preview',200,200);
+            });
+        });
+    });
+</script>
+</section>
+
+
+
+

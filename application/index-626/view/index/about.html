@@ -1,0 +1,419 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>{$seo.title}</title>
+	<meta name="baidu-site-verification" content="C6R2exmaNx" />
+	<meta name="keywords" content="{$seo.keywords}" />
+	<meta name="description" content="{$seo.description}" />
+	<link href="__STATIC__/home/css/css2018.css" rel="stylesheet" type="text/css">
+	<link href="__STATIC__/home/css/zsl.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="__STATIC__/home/css/global.css">
+	<script src="__STATIC__/home/js/jquery.min.js" type="text/javascript"></script>
+	<!-- <script src="__STATIC__/home/js/nav.js" type="text/javascript"></script> -->
+	<script src="__STATIC__/home/js/zsl.js" type="text/javascript"></script>
+</head>
+
+<body class="neiye">
+	<script type="text/javascript" src="__STATIC__/home/js/jquery.superslide.2.1.1.js"></script>
+	<script src="__STATIC__/home/js/anim.js">
+			//动画
+	</script>
+	<style>
+		.nav li {
+			position: relative;
+		}
+	</style>
+	<!--  -->
+
+	{include file="public/header" /}
+
+	<!--  -->
+	<!--banner begin-->
+	<div class="solutions_banner" style="background-image:url(__STATIC__/home/images/columnbanner1.jpg);">
+		<img src="__STATIC__/home/images/columnbanner1.jpg" alt="" />
+		<div class="txts dw">
+			<h1>关于我们</h1>
+			<p>专业是基础，服务是信任，效果是保证</p>
+
+		</div>
+
+	</div>
+	<!--banner end-->
+	<div class="aboutPage">
+		<div class="scheme">
+			<div class="wrap">
+				<div class="left">
+					<div class="txt1" style="color: #000000;">深圳市<a href="http://www.yuntianxia.com/" style="color: #000;">云天下</a>信息技术有限公司</div>
+					<div class="txt2">专注于提供<a href="http://www.yuntianxia.com/promotion.html" style="color: #000000;">网络推广</a>和<a href="http://www.yuntianxia.com/solutions.html" style="color: #000000;">网络营销</a><a href="http://www.yuntianxia.com/solutions.html" style="color: #000000;">解决方案</a></div>
+					<a href="/contact.html" class="btn">联系云天下</a>
+				</div>
+				<div class="text">
+					{$about.ms|raw}
+
+					<!-- <p>致力于互联网品牌建设与网络营销，专业领域包括网站建设、电子商务、移动互联网营销、系统平台开发，等服务范围，并且涵盖基础的域名服务、主机服务；企业邮箱、网络营销等应用服务；以先进完善的建站体系，及不断开拓创新的精神理念，以及高端的企业电子商务解决方案和顾问咨询服务，帮助企业客户真正实现电子商务应用，提高企业的竞争能力。</p>
+						<br>
+						<p>云天下研发中心拥有一支由多名网络安全专家、软件工程专家和项目管理专家、网络营销专家、网站建设策划专家组成的专业队伍。构建了365天不间断的稳定运行保障体系，其服务器群分布在深圳以及香港多个IDC机房，各个机房之间线路实现网络实时监控等，为客户提供高质量、高效率、高安全性的7x24小时专业运维保证。领先的技术实力和完善的运营服务体系是云天下高速信息化运营服务商理念的强大支撑。</p>
+				 -->
+				</div>
+			</div>
+		</div>
+		<div class="contactPage">
+			<div class="intention">
+				<div class="wrap">
+						<form id="submit_form" enctype="multipart/form-data">
+						<div class="title">合作意向表</div>
+						<div class="left">
+							<div class="inpu"><input type="text" name="company" id="company" placeholder="公司名称"></div>
+							<div class="inpu"><input type="text" name="tel" id="tel" placeholder="电话"></div>
+							<div class="inpu"><input type="text" name="username" id="username"  placeholder="姓名"></div>
+							<div class="inpu"><input type="text" name="email" id="email" placeholder="邮箱"></div>
+						</div>
+						<div class="right">
+							<div class="inpu"><textarea placeholder="留言内容" name="content" id="content"></textarea></div>
+							<div class="btn"><input type="button" name="" value="提交需求" id="submit" /></div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="contact">
+				<div class="wrap">
+					<div class="list">
+						<ul>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/contact_icon1.gif"></div>
+								<div class="text">
+									<p>公司地址</p>
+									<p>{$config.address}</p>
+								</div>
+							</li>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/contact_icon2.gif"></div>
+								<div class="text">
+									<p>咨询电话</p>
+									<p>{$config.tel}</p>
+								</div>
+							</li>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/contact_icon3.gif"></div>
+								<div class="text">
+									<p>公司邮箱</p>
+									<p>{$config.email}</p>
+								</div>
+							</li>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/contact_icon4.gif"></div>
+								<div class="text">
+									<p>传真</p>
+									<p>{$config.fax}</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="traffic">
+				<div class="wrap">
+					<div class="title">欢迎光临<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a>洽谈合作项目</div>
+					<div class="list">
+						<ul>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/traffic1.gif"></div>
+								<div class="tit">乘地铁到<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a></div>
+								<div class="text">可乘坐地铁一号线到坪洲地铁站，从B口出，往前走大概五十米，右转走到头，建润商务中心501（<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a>）</div>
+							</li>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/traffic2.gif"></div>
+								<div class="tit">乘公交到<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a></div>
+								<div class="text">可乘坐公交到西乡同仁妇科医院对面就是建润商务中心501（<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a>）</div>
+							</li>
+							<li>
+								<div class="icon"><img src="__STATIC__/home/images/traffic3.gif"></div>
+								<div class="tit">出租车或者自驾到<a href="http://www.yuntianxia.com/contact.html" style="color:#000">云天下</a></div>
+								<div class="text">打车认准建润商务中心501，司机师傅一般都知道，或者到同仁妇科医院对面，如果自驾车的话就GPS定位建润商务中心即可</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="business">
+			<div class="wrap">
+				<div class="pic">
+					<img src="__STATIC__/home/images/aboutpage_business.jpg">
+					<div class="filter"></div>
+					<div class="text">
+						<div class="txt1">我们能做什么</div>
+						<div class="txt2">
+							一站式<a href="http://www.yuntianxia.com/website.html" style="color: #fff;">网站建设</a>服务平台，致力于互联网品牌建设与<a href="http://www.yuntianxia.com/promotion.html" style="color: #fff;">网络营销</a>，融合了<a href="http://www.yuntianxia.com/website.html" style="color: #fff;">网站建设</a>、<a href="http://www.yuntianxia.com/promotion.html" style="color: #fff;">网站推广</a>、移动H5设计、小程序、APP开发、企业邮箱等专业SAAS服务，为客户提供集“创意+整合+营销”于一身的互联网品牌整合方案！
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<ul>
+						<li>
+							<div class="icon"><img src="__STATIC__/home/images/aboutpage_business_icon1.png"></div>
+							<div class="tit">网站建设</div>
+							<div class="txt">网站打开速度快，用户体验好，风格多样化，用户互动性高，增强用户黏着度。</div>
+						</li>
+						<li>
+							<div class="icon"><img src="__STATIC__/home/images/aboutpage_business_icon2.png"></div>
+							<div class="tit">SEO优化排名</div>
+							<div class="txt">按天计费，不到首页不扣费，最快7天上词，360、搜狗、移动端排名效果赠送。</div>
+						</li>
+						<li>
+							<div class="icon"><img src="__STATIC__/home/images/aboutpage_business_icon3.png"></div>
+							<div class="tit">正规白帽优化</div>
+							<div class="txt">拒绝黑帽，不作弊，白帽<a href="http://www.yuntianxia.com/seo.html" style="color: #666666;">SEO</a>+转化，无惧百度算法更迭，关键词长期稳定首页。</div>
+						</li>
+						<li>
+							<div class="icon"><img src="__STATIC__/home/images/aboutpage_business_icon4.png"></div>
+							<div class="tit">整站优化</div>
+							<div class="txt">基于整站质量、整站流量、整站权重、整站排名、整站转化率的综合<a href="http://www.yuntianxia.com/seo.html" style="color: #666666;">SEO优化</a>。</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="service">
+			<div class="wrap" style="margin-bottom:100px;">
+				<div class="columnTitle">
+					<div class="tit">服务流程</div>
+					<div class="txt">走进<a href="http://www.yuntianxia.com/" style="color: #666666;">云天下</a>，看一个好网站是如何诞生的</div>
+				</div>
+				<div class="tab">
+					<ul>
+						<li class="on">
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon1.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon11.png"></div>
+									<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon11.png"></div>
+							<div class="number">01</div>
+							<div class="text">需求收集</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon2.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon22.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon22.png"></div>
+							<div class="number">02</div>
+							<div class="text">项目报价</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon3.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon33.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon33.png"></div>
+							<div class="number">03</div>
+							<div class="text">项目立项</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon4.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon44.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon44.png"></div>
+							<div class="number">04</div>
+							<div class="text">创意设计</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon5.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon55.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon55.png"></div>
+							<div class="number">08</div>
+							<div class="text">后期维护</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon6.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon66.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon66.png"></div>
+							<div class="number">07</div>
+							<div class="text">客户验收</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon7.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon77.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon77.png"></div>
+							<div class="number">06</div>
+							<div class="text">客户审核</div>
+						</li>
+						<li>
+							<div class="icon1" style="background-image:url(__STATIC__/home/images/aboutpage_service_icon8.png)"><img
+									src="__STATIC__/home/images/aboutpage_service_icon88.png"></div>
+							<div class="icon2"><img src="__STATIC__/home/images/aboutpage_service_icon88.png"></div>
+							<div class="number">05</div>
+							<div class="text">程序开发</div>
+						</li>
+					</ul>
+				</div>
+				<div class="tabBox">
+					<div class="box" style="display:block;">
+						<div class="anim anim-1">
+							<div class="tit">需求收集</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>竞争能力分析 </p>
+								<p>SWOT分析</p>
+								<p>可行性分析</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">项目报价</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>成立方案工作小组</p>
+								<p>需求分析</p>
+								<p>功能分析</p>
+								<p>内容规划</p>
+								<p>方案策划</p>
+								<p>费用预算</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">项目立项</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>成立项目组</p>
+								<p>项目启动</p>
+								<p>项目调研</p>
+								<p>项目WBS分解</p>
+								<p>流程分析</p>
+								<p>需求定义</p>
+								<p>验收标准</p>
+								<p>项目备案</p>
+								<p>项目管理</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">创意设计</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>创意规划</p>
+								<p>页面设计</p>
+								<p>创意设计</p>
+								<p>设计确认</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">后期维护</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>后期维护</p>
+								<p>操作手册</p>
+								<p>运营维护</p>
+								<p>升级规划 </p>
+								<p>未来发展研究</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">客户验收</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>验收合格</p>
+								<p>网站上线</p>
+								<p>用户支持</p>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">客户审核</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>客户意见</p>
+								<p>拓展性规划</p>
+								<p>应变管理</p>
+								<p>系统测试</p>
+
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="anim anim-1">
+							<div class="tit">程序开发</div>
+							<div class="line"></div>
+							<div class="txt">
+								<p>前端切图</p>
+								<p>用户体验</p>
+								<p>系统结构设计</p>
+								<p>功能开发</p>
+								<p>功能确认</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<script language="javascript">
+			$(".tab li").hover(function () {
+				var linum = $(this).index();
+				var CaseList = $(".tabBox .box");
+				$(this).addClass('on').siblings().removeClass('on');
+
+				//$("#bigimg").attr("src",$(this).attr("lang"));
+
+
+				CaseList.eq(linum).show().siblings().hide();
+				//CaseList.find(".anim").removeClass("anim-show");
+				//			setTimeout(function(){
+				//				CaseList.eq(linum).find(".anim").addClass("anim-show");
+				//			},6)
+
+			}, function () {
+
+			})
+		</script>
+		<div class="qualification">
+			<div class="wrap">
+				<div class="columnTitle">
+					<div class="tit">企业资质</div>
+					<div class="txt">多项软件开发著作权&nbsp;&nbsp;企业品牌商标认证证书&nbsp;&nbsp;软件开发所有唯一权</div>
+				</div>
+				<div class="picScroll-left">
+					<a class="next"></a>
+					<a class="prev"></a>
+					<div class="bd">
+						<ul class="picList">
+							{foreach $bannerqiye as $v}
+							<li><img src="{$v.img}"></li>
+							{/foreach}
+
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">
+					jQuery(".picScroll-left").slide({
+						titCell: ".hd ul",
+						mainCell: ".bd ul",
+						autoPage: true,
+						effect: "left",
+						autoPlay: true,
+						vis: 4,
+						scroll: 1,
+						pnLoop: true,
+						interTime: 3500,
+						trigger: "click"
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--新增尾begin-->
+
+	{include file="public/footer" /}
+
+</body>
+
+</html>
+<script>
+
+</script>

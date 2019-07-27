@@ -1,0 +1,111 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$seo.title}</title>
+	<meta name="baidu-site-verification" content="C6R2exmaNx" />
+	<meta name="keywords" content="{$seo.keywords}" />
+	<meta name="description" content="{$seo.description}" />
+	<link href="__STATIC__/home/css/css.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="__STATIC__/home/css/global.css">
+	<script src="__STATIC__/home/js/jquery.min.js" type="text/javascript"></script>
+	<!-- <script src="__STATIC__/home/js/nav.js" type="text/javascript"></script> -->
+	<script src="__STATIC__/home/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".picScroll").slide({
+				mainCell: "ul",
+				autoPlay: true,
+				effect: "left",
+				vis: 8,
+				scroll: 2,
+				autoPage: true,
+				pnLoop: false
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript" src="__STATIC__/home/js/jquery.superslide.2.1.1.js"></script>
+	<script src="__STATIC__/home/js/anim.js">
+			//动画
+	</script>
+	<style>
+		.nav li {
+			position: relative;
+		}
+	</style>
+	<!--  -->
+
+	{include file="public/header" /}
+
+	<!--  -->
+	<div class="solutions_banner" style="background-image:url(__STATIC__/home/images/columnbanner1.jpg);">
+		<img src="__STATIC__/home/images/columnbanner1.jpg" alt="" />
+		<div class="txts dw">
+			<h1>关于我们</h1>
+			<p>专业是基础，服务是信任，效果是保证</p>
+		</div>
+	</div>
+	<div class="zy_top">
+		<div class="zy_top_center gy">
+			<div class="zy_top_left" style="width:500px;">
+				<div class="zy_top_left_left">AB<span>OUT ·</span></div>
+				<div class="zy_top_left_right" style="width:290px;">
+					<div class="zy_top_left_right01">发展历程
+						<!--<img src="__STATIC__/home/images/zy_top_line.jpg"   />-->
+					</div>
+					<div class="zy_top_left_right02"><a href="http://www.yuntianxia.com/" style="color:#686868;"></a>从“追赶者”到“领军者”的蜕变与成长</div>
+				</div>
+			</div>
+			<div class="zy_top_right" style="width:636px;">
+				<div class="wz"><img src="__STATIC__/home/images/wz_icon.jpg" alt="发展历程" /> 当前位置：<a
+						href="/index.html">首页</a> > <a href="/about.html">关于我们</a></div>
+				<div class="zy_case_fl" style="width:636px;">
+					<ul>
+						<li class=flon style="float:right;"><a href="/development.html" title="发展历程">发展历程</a></li>
+						<li style="float:right;"><a href="/company_team.html" title="公司团队">公司团队</a></li>
+						<li style="float:right;"><a href="/remittance.html">汇款方式</a></li>
+						<li style="float:right;"><a href="/about.html" title="公司团队">关于我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="development_desc">
+		<div class="gy" style="font-size:16px;">
+			核心团队10年专注<a href="http://www.yuntianxia.com/website.html" style="color:#6d6d6d;">网站建设</a>和<a href="http://www.yuntianxia.com/seo.html" style="color:#6d6d6d;">SEO优化</a>，建站+<a href="http://www.yuntianxia.com/promotion.html" style="color:#6d6d6d;">推广</a>一步到位，让有需求的客户快速找到您。一切只为企业量身定制开发，满足客户个性化需求。让您的网站完胜您的竞争对手。<br />
+			先天良好的<a href="http://www.yuntianxia.com/seo.html" style="color:#6d6d6d;">SEO</a>基因，更受搜索引擎喜爱。我们更懂<a href="http://www.yuntianxia.com/seo.html" style="color:#6d6d6d;">SEO</a>优化，建站时就自带良好的<a href="http://www.yuntianxia.com/seo.html" style="color:#6d6d6d;">SEO</a>基因，让网站更符合搜索引擎排名优化，让访问更友好。同等成本，让您的网站在免费排名更靠前。<br />
+			好设计会说话，用更具吸引力的内容呈现，打造品牌差异化优势，让客户主动找你。营销，只为有效！为客户持续创造价值！您能想到的，我们已经做到；你没想到的，我们做到更多。
+		</div>
+	</div>
+	<div class="gy">
+		<div class="development_con">
+			<h2 class="dev_head">
+				腾飞
+			</h2>
+			<ul class="dev_ul">
+				{foreach $development as $v}
+				<li>
+					<span class="span">{$v.title}</span>
+					<p class="p">
+						{$v.ms|raw}
+					</p>
+					<i>&nbsp;</i>
+				</li>
+				{/foreach}
+
+			</ul>
+		</div>
+	</div>
+
+	<!--新增尾begin-->
+
+	{include file="public/footer" /}
+
+</body>
+
+</html>

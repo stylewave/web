@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{$data.title}-云天下</title>
+		<meta name="baidu-site-verification" content="C6R2exmaNx" />
+		<meta name="keywords" content="{$data.title}" />
+		<meta name="description" content="{$data.desc}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+	</head>
+	<body>
+		{include file="public/header" /}
+		<!-- banner -->
+		<div class="caseBanner">
+			<img src="__STATIC__/mobile/images/case04.png" alt="">
+			<div class="box">
+				<h1>{$data.title}</h1>
+				<p>{$data.stitle}</p>
+			</div>
+		</div>
+		<!-- banner end -->
+		<div class="caseDetail">
+			<div class="div">
+				<div class="left">
+					<h1>项目简介</h1>
+					<p>{$data.desc}</p>
+				</div>
+				<div class="right">
+					<img src="__STATIC__/mobile/images/case06.png" alt="">
+				</div>
+			</div>
+		</div>
+		<!-- 内容 -->
+		<div class="website" style="padding: 0.434782rem;">
+				{$data.ms|raw}
+		</div>
+		<!-- 内容 end -->
+		<!-- 资讯 end -->
+		{include file="public/footer" /}
+	</body>
+</html>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>
+

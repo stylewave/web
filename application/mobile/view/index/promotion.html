@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>{$seo.title}</title>
+	<meta name="baidu-site-verification" content="C6R2exmaNx" />
+	<meta name="keywords" content="{$seo.keywords}" />
+	<meta name="description" content="{$seo.description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+</head>
+<body>
+{include file="public/header"/}
+<script>
+		function func(){
+			  var vs = $("#pagenum").find("option:selected").val();
+		   
+			  window.location.href = ""+vs;
+			  // alert(vs);
+			  }
+
+	  </script>
+	<!-- banner -->
+		<div class="aboutBanner">
+			<img src="__STATIC__/mobile/images/news01.png" alt="">
+		</div>
+	<!-- banner end -->
+	<!-- 内容 -->
+		<div class="news">
+			<div class="newsFen">
+				<select id="pagenum" onchange="func()">	
+					<option value="/news.html">全部</option>
+					<option value="/seo.html">seo优化</option>
+					<option value="/jianzhanzs.html">建站知识</option>
+					<option value="/company.html">公司新闻</option>
+					<option value="/promotion.html">网络推广</option>
+					<option value="/marketing.html">网络营销</option>
+				</select>
+				<div class="news_one_r">
+					<form action="" method="get" name="form3" id="form3">
+						<input type="text" class="cinputs" name="keys" placeholder="输入搜索关键字">
+						<input type="submit" class="cbnts" value="">
+					</form>
+				</div>
+			</div>
+			<ul>
+					{foreach $list as $v}
+				<li>
+					<div class="txts">
+						<a href="/news/{$v.id}.html" title="{$v.id}">
+							<h2 class="h2">{$v.title}</h2>
+						</a>
+						<p class="p">{$v.desc|getSubstr=0,20}</p>
+						<div class="tags"><span>标签：</span><a href="/news/{$v.id}.html">青岛网站推广</a>
+						</div>
+						<a href="/news/{$v.id}.html" title="{$v.title}">
+						<div class="dates"><span>{$v.publishtime|getSubstrTime=7,3,2}</span>{$v.publishtime|getSubstrTime=0,7,1}</div>
+						</a>
+					</div>
+				</li>
+				 {/foreach}
+			
+			</ul>
+			<div class="page">
+					{$list->render()|raw}
+			</div>
+		</div>
+	<!-- 内容 end -->
+	<!-- 资讯 end -->
+{include file="public/footer" /}
+</body>
+</html>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>
+
+

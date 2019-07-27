@@ -1,0 +1,267 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+
+<script charset="utf-8" src="__STATIC__/kin/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="__STATIC__/kin/lang/zh-CN.js"></script>
+
+
+<script>
+    // 关闭过滤模式，保留所有标签
+//    KindEditor.options.filterMode = false;
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id',{
+            uploadJson :"{:Url::build('admin/Article/add')}",//自己的上传路
+            extraFileUploadParams:{
+                'FLASHPHPSESSID' : "<?php echo session_id();?>"
+            }
+        });
+    });
+</script>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">产品基本信息</a></li>
+            <li class=""><a href="#fa-icons-attr" data-toggle="tab">产品属性</a></li>
+          <li class=""><a href="#fa-icons-content" data-toggle="tab">产品详情编辑</a></li>
+            <li class=""><a href="#fa-icons-pic" data-toggle="tab">产品相册</a></li>
+        </ul>
+        <form action="{:Url::build('admin/Goods/add');}" enctype="multipart/form-data" method="post" name="qxform" id="qxform">
+        <div class="tab-content">
+
+          <!-- Font Awesome Icons -->
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+
+              <input type="hidden" name="__token__" value="{$Request.token}" />
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <section id="new">
+              <h4 class="page-header">{if isset($info) && !empty($info)}修改{else/}添加{/if}产品</h4>
+                <div>
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+
+              <div class="row fontawesome-icon-list">
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  产品名称：<input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                </div>
+
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      其他标题：<input type="text" style="color: #444444;width: 80%" id="stitle" name="stitle" value="{$info.stitle}"> <span class="icon icon-title margin-small" ></span>
+                  </div>
+
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+
+                    封面图片：<span id="selectpic" style="cursor:pointer;color:blue">点击选择图片</span><span style="color: red">*</span>
+                    <div style="margin-left: 63px;" id="preview"></div>
+                    <input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+
+                </div>
+
+                  {if !empty($info['img'])}
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+
+                      原有图片：<a href="{$info.img}" target="_blank"><img src="{$info.thumb}"></a>
+
+                  </div>
+                  {/if}
+
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      实际价格：<input type="text" style="color: #444444;width: 20%" id="price" name="price" value="{$info.price}"> <span style="color: red">*</span> <span style="color: red"> 客户实际付款价格</span><span class="icon icon-price margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      产品库存：<input type="text" style="color: #444444;width: 20%" id="kucun" name="kucun" value="{$info.kucun}"> <span style="color: red">*</span> <span style="color: red"> 默认1</span><span class="icon icon-price margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      展示价格：<input type="text" style="color: #444444;width: 20%" id="oprice" name="oprice" value="{$info.oprice}"> <span style="color: red">展示给客户看的，划掉的价格</span><span class="icon icon-oprice margin-small" ></span>
+                  </div>
+
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                  产品排序：<input type="text" style="color: #444444;width: 20%" id="orders" name="orders" value="{$info.orders}"> <span style="color: red">>=0，越小越前，前后台都有效，默认0</span><span class="icon icon-order margin-small" ></span>
+                </div>
+
+                <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                    <div class="form-group">
+                      选择分类：<select class="form-control select2" style="width: 50%;" name="cateid" id="cateid">
+                      <option selected="selected" value="0">请选择分类</option>
+                        {foreach $catelist as $rbac}
+                          <option value="{$rbac.id}" {if $rbac['id'] == $info['cateid']}selected{/if}>{php}if($rbac['dj'] > 0)  {echo str_repeat(" L__ ",$rbac['dj'])." ";}{/php}{$rbac.title}</option>
+                        {/foreach}
+                      </select>
+                      <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                    </div>
+                </div>
+
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      <div class="form-group">
+                          产品单位：<select class="form-control select2" style="width: 50%;" name="unit" id="unit">
+                          <option selected="selected" value="0">请选择单位</option>
+                          {foreach $unitlist as $rbac}
+                          <option value="{$rbac.id}" {if $rbac['id'] == $info['unit']}selected{/if}>{$rbac.title}</option>
+                          {/foreach}
+                      </select>
+                          <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                      </div>
+                  </div>
+
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      <div class="form-group">
+                          产品品牌：<select class="form-control select2" style="width: 50%;" name="brand" id="brand">
+                          <option selected="selected" value="0">请选择品牌</option>
+                          {foreach $brandlist as $rbac}
+                          <option value="{$rbac.id}" {if $rbac['id'] == $info['brand']}selected{/if}>{$rbac.title}</option>
+                          {/foreach}
+                      </select>
+                          <span class="icon icon-cateid margin-small" ></span><span style="color: red">*</span>
+                      </div>
+                  </div>
+
+
+
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 40px;margin-top: 15px;">
+                      是否推荐：<label>
+                      推荐<input type="radio" name="ist" value="1" {if $info['ist'] == 1}checked{/if}>
+
+                  </label>
+                         <label>
+                      不推荐<input type="radio" name="ist" value="0" {if $info['ist'] == 0}checked{/if}>
+
+                  </label>
+                  </div>
+
+
+              </div>
+            </section>
+
+
+
+
+
+          </div>
+          <!-- /#fa-icons -->
+
+            <div class="tab-pane" style="padding-left: 20px;" id="fa-icons-attr">
+                <h4 class="page-header">产品属性</h4>
+                <div>
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+                <div style="width: 100%; margin-top: 20px;padding-left: 20px;">
+
+                </div>
+
+            </div>
+
+          <div class="tab-pane" style="padding-left: 20px;" id="fa-icons-content">
+              <h4 class="page-header">产品详情</h4>
+              <div>
+                  上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                  <br/>
+                  如果多图上传不显示，请在当前浏览器访问 <a href="http://get.adobe.com/cn/flashplayer/" target="_blank">http://get.adobe.com/cn/flashplayer/</a>，按提示操作更新，安装完成后关闭浏览器重新打开，并且在提示中选择允许
+              </div>
+            <div style="width: 100%; margin-top: 20px;padding-left: 20px;">
+                  <textarea id="editor_id" name="ms" style="width:100%;height:500px;">{$info.ms}</textarea>
+            </div>
+
+          </div>
+
+
+            <div class="tab-pane" style="padding-left: 20px;" id="fa-icons-pic">
+                <h4 class="page-header">产品相册</h4>
+                <div>
+                    上传大小限制：{php}echo ini_get('upload_max_filesize');{/php}
+                </div>
+                <div style="width: 100%; margin-top: 20px;padding-left: 20px;">
+
+                </div>
+
+            </div>
+
+          <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="qxsubmit();">提交</button><span class="icon icon-ms margin-small" ></span>
+
+        </div>
+        </form>
+        <!-- /.tab-content -->
+      </div>
+
+    </div>
+    <!-- /.col -->
+  </div>
+
+
+  <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+  <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/select2.min.js"></script>
+  <script src="__STATIC__/admin/adminlte/bower_components/select2/js/i18n/zh-CN.js"></script>
+
+
+
+
+
+
+
+
+<script>
+
+    function qxsubmit() {
+        if($('#title').val() == '') {
+            tips('请填写标题！','.icon-title','title');
+            return false;
+        }
+//        var file=$("#upload");
+//        if($.trim(file.val())==''){
+//            tips('请上传封面图！','.icon-cateid','cateid');
+//            return false;
+//        }
+
+        if($('#cateid').val() <1) {
+            tips('请选择分类！','.icon-cateid','cateid');
+            return false;
+        }
+
+        editor.sync();
+        var html = $('#editor_id').val(); // jQuery
+        if(html =='') {
+            tips('请填写文章内容！','.icon-ms','editor_id');
+            return false;
+        }
+        document.qxform.submit();
+    }
+
+    $(function() {
+        $('.select2').select2({
+            language:'zh-CN'
+        });
+        $("#selectpic").click(function () {
+            $("#upload").click();
+            $("#upload").on("change",function(){
+                previewImage(this,'preview',200,200);
+            });
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</section>
+
+
+
+

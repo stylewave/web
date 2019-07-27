@@ -1,0 +1,51 @@
+{__NOLAYOUT__}
+  <table id="example1" class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>职位名称</th>
+        <th>职位类别</th>
+        <th>招聘人数</th>
+        <th>工作地点</th>
+        <th>是否显示</th>
+        <th>排序</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php $i=0;?>
+ {foreach $list as $li}
+    <?php $i++;?>
+ <tr>
+     <td>{$li.title}</td>
+     <td>{$li.cate}</td>
+     <td>{$li.num}</td>
+     <td>{$li.address}</td>
+     <td>
+         {if $li['ist'] == 1}
+         <a href="javascript:void(0);" onclick="isdo('确定不显示吗？','{:Url::build('admin/Recruit/ajaxRecruit',['id'=>$li['id'],'do'=>'qxtj'])}',this);">
+             <i class="fa fa-check"> 是</i>
+         </a>
+         {else/}
+         <a href="javascript:void(0);"  onclick="isdo('确定要显示吗？','{:Url::build('admin/Recruit/ajaxRecruit',['id'=>$li['id'],'do'=>'tj'])}',this);">
+             <i class="fa fa-ban"> 否</i>
+         </a>
+         {/if}
+     </td>
+     <td><input style="text-align: center;" type="text" tipvalue="cateordertip{$i}" size="3" value="{$li.orders}" onblur="isdo('','{:Url::build('admin/Recruit/ajaxRecruit',['id'=>$li['id'],'do'=>'order'])}',this);"/> <span class="icon icon-cateordertip{$i} margin-small" ></span></td>
+     <td>{$li.addtime}</td>
+     <td><a href="{:Url::build('admin/Recruit/recruit',['id'=>$li['id']])}"><i class="fa fa-edit"></i> 修改</a>&nbsp;&nbsp;  <a href="javascript:void(0);" onclick="isdel('您确定要删除这个岗位吗？','{:Url::build('admin/Recruit/del',['id'=>$li['id']])}');"><i class="fa fa-trash-o"></i> 删除</a></td>
+ </tr>
+ {/foreach}
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="dataTables_info"  role="status" aria-live="polite"></div>
+    </div>
+    <div class="col-sm-7">
+      <div class="dataTables_paginate paging_simple_numbers" >
+          {$list->render()|raw}
+      </div>
+    </div>
+  </div>

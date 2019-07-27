@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{$seo.title}</title>
+		<meta name="baidu-site-verification" content="C6R2exmaNx" />
+		<meta name="keywords" content="{$seo.keywords}" />
+		<meta name="description" content="{$seo.description}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/index.css">
+		<link rel="stylesheet" href="__STATIC__/mobile/css/swiper.min.css">
+	</head>
+	<body>
+		{include file="public/header" /}
+		<!-- banner -->
+		<div class="aboutBanner">
+			<img src="__STATIC__/mobile/images/case02.png" alt="">
+		</div>
+		<!-- banner end -->
+		<!-- 内容 -->
+		<div class="case">
+			<div class="cl-ul">
+				<ul>
+						{foreach $list as $vo}
+					<li class="anim anim-1 anim-show">
+						<a href="/solutions/{$vo.id}.html" title="">
+							<div class="imgs"><img class="img-responsive" src="{$vo.img}"
+								 alt="">
+								<p><i></i></p>
+							</div>
+							<div class="txts">
+								<div class="cons">
+									<h2 class="h2">{$vo.title}</h2>
+									<p class="p">{$vo.desc|getSubstr=0,20}</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					{/foreach}
+				
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="page">
+					{$list->render()|raw}
+			</div>
+		</div>
+		<!-- 内容 end -->
+		<!-- 资讯 end -->
+		{include file="public/footer" /}
+	</body>
+</html>
+<script src="__STATIC__/mobile/js/demo.js"></script>
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/swiper.min.js"></script>
+

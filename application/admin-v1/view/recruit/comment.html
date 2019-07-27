@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="__STATIC__/admin/adminlte/bower_components/select2/css/select2.min.css">
+<script charset="utf-8" src="__STATIC__/kin/lang/zh-CN.js"></script>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom" style="margin-top: 20px;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#fa-icons-server" data-toggle="tab">详细信息</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" style="padding-left: 20px;" id="fa-icons-server">
+              <input type="hidden" name="id" id="infoid" value="{$info.id}" />
+            <section id="new">
+              <div class="row fontawesome-icon-list">
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>申请职位：</label><input type="text" style="color: #444444;width: 80%" id="title" name="title" value="{$info.title}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>姓名：</label><input type="text" style="color: #444444;width: 80%" id="username" name="username" value="{$info.username}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>性别：</label><input type="text" style="color: #444444;width: 80%" id="sex" name="sex" value="{$info.sex}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>出生年月：</label><input type="text" style="color: #444444;width: 80%" id="birthday" name="birthday" value="{$info.birthday}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>电话：</label><input type="text" style="color: #444444;width: 80%" id="tel" name="tel" value="{$info.tel}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>邮箱：</label><input type="text" style="color: #444444;width: 80%" id="email" name="email" value="{$info.email}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>籍贯：</label><input type="text" style="color: #444444;width: 80%" id="area" name="area" value="{$info.area}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>地址：</label><input type="text" style="color: #444444;width: 80%" id="address" name="address" value="{$info.address}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>学历：</label><input type="text" style="color: #444444;width: 80%" id="xl" name="xl" value="{$info.xl}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>学校：</label><input type="text" style="color: #444444;width: 80%" id="school" name="school" value="{$info.school}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>专业：</label><input type="text" style="color: #444444;width: 80%" id="zy" name="zy" value="{$info.zy}"> <span style="color: red">*</span><span class="icon icon-title margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>邮编：</label><input type="text" style="color: #444444;width: 80%" id="yb" name="yb" value="{$info.yb}"> <span class="icon icon-stitle margin-small" ></span>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>所获奖项：</label><textarea rows="2" cols="96" name="content">{$info.content}</textarea>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>工作经历：</label><textarea rows="2" cols="96" name="content_a">{$info.content_a}</textarea>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="width: 60%;line-height: 30px;margin-top: 15px;">
+                      <label>业余爱好：</label><textarea rows="2" cols="96" name="content_b">{$info.content_b}</textarea>
+                  </div>
+
+              </div>
+            </section>
+          </div>
+            <button type="button" class="btn btn-primary" style="margin-top: 10px;margin-bottom:20px;margin-left: 100px;" onclick="javascript:history.back();return false;">返回</button><span class="icon icon-ms margin-small" ></span>
+        </div>
+        <!-- /.tab-content -->
+      </div>
+    </div>
+    <!-- /.col -->
+  </div>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__STATIC__/public/common.js"></script>
+    <style>
+        .col-sm-4 input{text-indent:10px;}
+        .col-sm-4 label{color:#555;width:10%;}
+        .col-sm-4 textarea{text-indent:10px;}
+    </style>
+</section>
+
+
+
+
